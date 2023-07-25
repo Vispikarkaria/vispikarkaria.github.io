@@ -1,89 +1,69 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <title>CV - Home</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fafafa;
-            color: #333;
-        }
-
-        .nav {
-            background-color: #1d1d1d;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2em;
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            transition: background 0.3s;
-        }
-
-        .nav a:hover {
-            background: #333;
-            border-radius: 5px;
-        }
-
-        .content {
-            padding: 50px;
-            font-size: 1.1em;
-            line-height: 1.6;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .content h1, .content h2 {
-            color: #333;
-        }
-
-        .content h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-        }
-
-        .content h2 {
-            font-size: 1.5em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-        }
-
-        .content p {
-            color: #555;
-        }
-
-        .profile-image {
-            max-width: 200px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
+    <meta name="author" content="Vispi Nevile Karkaria" />
+    <title>Vispi Nevile Karkaria</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body>
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="experience.html">Experience</a>
+<nav class="navbar navbar-expand-lg navbar-expand-md navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="content">
-        <img class="profile-image" src="Personal_Photo.jpeg" alt="Your Name">
-        <h1>Vispi Nevile Karkaria</h1>
-        <h2>About Me</h2>
-        <p>
-
-
-        As a Ph.D. student at Northwestern University, my focus is centered on the development and implementation of machine learning algorithms for Digital Twins. I'm deeply immersed in projects encompassing various fields such as time-series analysis, language models, deep learning, uncertainty quantification, and optimization. My proficiency lies in creating machine learning models specifically designed for time-series analysis and building optimization algorithms for real-time decision making.
-        
-        My research is predominantly oriented toward the creation and utilization of these algorithms to construct digital twin systems. The concept of a digital twin refers to the creation of a digital replica of a physical system. This virtual model is capable of learning from its real-life counterpart in real time, facilitating instantaneous decision making by providing actionable feedback to the physical system. The harmony between the physical and digital systems encapsulates the innovative and dynamic nature of my research.
-        </p>
+</nav>
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center" id="header-container">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Vispi Nevile Karkaria</h1>
+            <h2 class="text-white-50 mx-auto mt-4 mb-4">Machine Learning, Digital Twins, Time-Series Analysis, Optimization</h2>
+            <a class="btn btn-link js-scroll-trigger" href="#about"><i class="fa fa-angle-down"></i></a>
+        </div>
     </div>
-</body>
+</header>
+<section class="about-section text-center bg-black" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col my-0">
+                <div class="sticky-top" id="cv-summary">
+                    <img class="rounded-circle img-fluid" id="avatar" src="Personal_Photo.jpeg" />
+                    <h2>About Vispi</h2>
+                    <div class="men">
+                        <div>
+                            <a class="btn men-but" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button">Go to...</a>
+                            <div class="collapse text-uppercase" id="collapse-1">
+                                <p><a class="men-link js-scroll-trigger" href="#interests">Interests</a></p>
+                                <p><a class="men-link js-scroll-trigger" href="#edu">Education</a></p>
+                                <p><a class="men-link js-scroll-trigger" href="#awards">Awards</a></p>
+                                <p><a class="men-link js-scroll-trigger" href="#exp">Experience</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 mx-auto" id="cv-main">
+                <p class="text-justify men-par">
+                    As a Ph.D. student at Northwestern University, my focus is centered on the development and implementation of machine learning algorithms for Digital Twins. I'm deeply immersed in projects encompassing various fields such as time-series analysis, language models, deep learning, uncertainty quantification, and optimization. My proficiency lies in creating machine learning models specifically designed for time-series analysis and building optimization algorithms for real-time decision making.
+
+                    My research is predominantly oriented toward the creation and utilization of these algorithms to construct digital twin systems. The concept of a digital twin refers to the creation of a digital replica of a physical system. This virtual model is capable of learning from its real-life counterpart in real time, facilitating instantaneous decision making by providing actionable feedback to the physical system. The harmony between the physical and digital systems encapsulates the innovative and dynamic nature of my research.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 </html>
