@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -8,12 +9,10 @@
     <title>Vispi Nevile Karkaria</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Keeping just two fonts for simplicity -->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
+    <!-- Using only the latest bootstrap version -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body, html {
@@ -27,90 +26,51 @@
             background-size: cover;
             height: 100%;
             text-align: center;
-            color: #fff;
-        }
-        
-        .masthead h1 {
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 2.5rem;
-            letter-spacing: .1rem;
-            color: #fff;
-        }
-        
-        .masthead h2 {
-            font-weight: 200;
-            font-size: 1.2rem;
-            letter-spacing: .1rem;
-            padding-bottom: 2rem;
-            color: #fff;
-        }
-
-        .masthead {
             padding-top: 70px;
-            /* Rest of your CSS */
         }
-
+        .masthead h1, .masthead h2 {
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
         .navbar {
-            color: grey;
-            background-color: #222; /* change as per your preference */
+            background-color: #222;
             z-index: 1030; 
         }
-        
         .about-section {
             background-color: #222;
             padding: 3rem 1.5rem;
         }
-        
-        .about-section h2 {
-            color: #fff;
-            font-weight: 700;
-            letter-spacing: .1rem;
-        }
-        
-        
         .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
             color: rgba(255,255,255,.5);
         }
-        
         .navbar-toggler {
             background: rgba(255,255,255,.5);
         }
-        
         .navbar-nav .nav-item .nav-link {
             color: rgba(255,255,255,.8);
         }
-        
-        .navbar-nav .nav-item .nav-link:hover {
-            color: rgba(255,255,255,.5);
-        }
-
         .footer {
             width: 100%;
             text-align: center;
             position: fixed;
             left: 0;
             bottom: 0;
-            background-color: #222; /* change as per your preference */
+            background-color: #222;
             padding: 1rem 0;
         }
-
         .footer a {
             color: grey;
             margin: 0 1rem;
         }
         .edu-item {
-            border-bottom: 1px solid #ccc;
-            padding: 1rem 0;
-            margin-bottom: 1rem;
+            border: 1px solid #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: transparent;
         }
-    
-        .edu-item:last-child {
-            border-bottom: none;
-        }
-    
-a        .edu-item h3, .edu-item h4 {
-            margin-bottom: .5rem;
+        .smaller-text {
+            font-size: 0.85rem;
         }
         #cv-summary {
             position: sticky;
@@ -118,39 +78,17 @@ a        .edu-item h3, .edu-item h4 {
             z-index: 100;
             padding: 20px;
             align-items: center;
-            background: #222; /* Same as the background color of the section */
+            background: #222;
         }
-        .divider {
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px; /* Adjust the width of the divider line */
-            background-color: lightblue; /* Light blue color for the divider line */
-            box-shadow: 0 0 10px lightblue; /* Glowing effect */
-        }
-
-        .edu-item {
-            border: 1px solid #ffffff; /* White border */
-            padding: 20px;             /* Add some padding inside the boxes */
-            margin-bottom: 20px;       /* Add some margin between the boxes */
-            border-radius: 10px;       /* Round the corners of the boxes */
-            background-color: transparent; /* Transparent background */
-        }
-        .smaller-text {
-            font-size: 0.85rem; /* Reduce the font size, you can adjust this value */
-        }
-
-
     </style>
 </head>
 
 <body>
 
-<!-- Navigation (copied from your main page) -->
-<nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark fixed-top" id="mainNav">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">HOME</a> <!-- Link back to your main page -->
+        <a class="navbar-brand js-scroll-trigger" href="index.html">HOME</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
@@ -208,6 +146,6 @@ a        .edu-item h3, .edu-item h4 {
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
