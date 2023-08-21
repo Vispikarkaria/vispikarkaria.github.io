@@ -49,15 +49,7 @@
         .navbar-nav .nav-item .nav-link {
             color: rgba(255,255,255,.8);
         }
-        .footer {
-            width: 100%;
-            text-align: center;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            background-color: #222;
-            padding: 1rem 0;
-        }
+
         .footer a {
             color: grey;
             margin: 0 1rem;
@@ -92,7 +84,10 @@
         .blog-content p.lead {
             color: #000; /* Black color for lead paragraph */
         }
-
+        /* Added bottom margin to the body to create space for the footer */
+        body {
+            margin-bottom: 60px;  /* Adjust this value based on your footer's height */
+        }
     </style>
 </head>
 
