@@ -171,23 +171,64 @@
 </section>
 
 
-<!-- Comment Section using Disqus -->
+<!-- Simple Comment Section -->
 <div class="container mt-5">
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-            this.page.url = 'YOUR_PAGE_URL';  // Replace with your page's canonical URL 
-            this.page.identifier = 'YOUR_UNIQUE_IDENTIFIER'; // Replace with a unique identifier for the blog post
-        };
+    <h3>Leave a Comment</h3>
 
-        (function() { 
-            var d = document, s = d.createElement('script');
-            s.src = 'https://YOUR_DISQUS_SUBDOMAIN.disqus.com/embed.js'; // Replace 'YOUR_DISQUS_SUBDOMAIN' with your specific Disqus subdomain.
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-</div>
+    <!-- Comment Form -->
+    <div class="comment-form">
+        <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea><br>
+        <button id="submitComment">Submit</button>
+    </div>
+
+    <!-- List of Comments -->
+    <div class="comments-list mt-4">
+        <ul id="commentList"></ul>
+    </div>
+</div><!-- CSS for the Comment Section -->
+<style>
+    .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .comment-form button {
+        background-color: #222;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .comments-list ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .comments-list li {
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- JavaScript for the Comment Section -->
+<script>
+    document.getElementById('submitComment').addEventListener('click', function() {
+        const commentInput = document.getElementById('commentInput');
+        const commentList = document.getElementById('commentList');
+        
+        if (commentInput.value.trim() !== "") {
+            const newComment = document.createElement('li');
+            newComment.textContent = commentInput.value.trim();
+            commentList.appendChild(newComment);
+            
+            commentInput.value = "";  // Clear the input
+        }
+    });
+</script>
+
 
 <footer class="footer">
     <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
