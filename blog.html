@@ -4,15 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
-    <meta name="author" content="Vispi Nevile Karkaria" />
-    <title>Vispi Nevile Karkaria</title>
+    <title>Vispi Nevile Karkaria - Blog Index</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Keeping just two fonts for simplicity -->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
-    <!-- Using only the latest bootstrap version -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body, html {
@@ -112,40 +108,72 @@
     </div>
 </nav>
 
-<!-- Blog Content -->
+<!-- Blog Index Content -->
 <section class="mt-5 pt-5 blog-content">
     <div class="container">
-        <h2>Leveraging Large Language Models and Prompt Engineering for Engineering Design</h2>
-        <p class="lead">Published: August 21, 2023 | Author: Vispi Nevile Karkaria</p>
-        <p>
-            With the advent of large-scale machine learning models, we are witnessing a transformative phase in various sectors. Engineering design, a field previously reliant on meticulous manual inputs, has embraced the potential of large language models (LLMs) for a more streamlined approach.
-        </p>
-        <h3>Introduction to LLMs</h3>
-        <p>
-            Large Language Models, like OpenAI's GPT series, are trained on diverse internet text. However, they do not specifically know which documents were in their training set. The ability of these models to generate coherent, diverse, and contextually appropriate content has paved the way for their application in numerous domains, including engineering design.
-        </p>
-        <h3>Role in Engineering Design</h3>
-        <p>
-            The integration of LLMs in the engineering design process has multiple facets. For starters, they can automate mundane documentation tasks. This not only saves time but also ensures error-free documentation, given the consistency of machine learning models.
-        </p>
-        <p>
-            Furthermore, with the right prompt engineering, LLMs can assist designers in brainstorming sessions by providing suggestions or even generating preliminary design drafts. This potential to co-create with AI can significantly reduce the design cycle time.
-        </p>
-        <h3>Prompt Engineering: A Game-Changer</h3>
-        <p>
-            Prompt engineering is about framing the problem statement or question in a way that guides the LLM towards a desired output. It plays a pivotal role in harnessing the true potential of an LLM. By accurately tailoring prompts, designers can elicit more accurate and relevant design solutions from the model.
-        </p>
-        <p>
-            In the context of engineering design, well-crafted prompts can lead to innovative solutions that were previously overlooked or deemed impossible.
-        </p>
-        <h3>Conclusion</h3>
-        <p>
-            The synergy between Large Language Models and engineering design, facilitated by effective prompt engineering, holds promising prospects for the future. As these models evolve and become more adept at understanding context, we can expect a more profound transformation in the realm of engineering design.
-        </p>
+
+        <!-- Sorting Filters -->
+        <ul class="list-inline text-center">
+            <li class="list-inline-item mx-3"><a href="#newest" class="text-dark font-weight-bold">Newest to Oldest</a></li>
+            <li class="list-inline-item mx-3"><a href="#oldest" class="text-muted">Oldest to Newest</a></li>
+        </ul>
+
+        <!-- Blog List -->
+        <div class="blog-list mt-4">
+            <!-- Example Blog Item (You'd repeat this structure for each blog entry) -->
+            <div class="blog-item" data-date="2023-08-20">
+                <h3><a href="Leveraging Large Language Models and Prompt Engineering for Engineering Design.html">Leveraging Large Language Models and Prompt Engineering for Engineering Design</a></h3>
+                <p class="text-muted smaller-text">Published: August 20, 2023</p>
+                <hr>
+            </div>
+            <!-- Add more blog items below... -->
+        </div>
     </div>
 </section>
 
+<!-- Footer (as provided) -->
+<!-- ... your footer code ... -->
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let filters = document.querySelectorAll(".list-inline a");
+    
+    filters.forEach(filter => {
+        filter.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            // Change active class for filters
+            filters.forEach(f => f.classList.remove("font-weight-bold"));
+            filters.forEach(f => f.classList.add("text-muted"));
+            this.classList.remove("text-muted");
+            this.classList.add("font-weight-bold");
+            
+            // Sorting logic based on the selected filter
+            let filterType = this.getAttribute("href").substring(1);
+            sortBlogs(filterType);
+        });
+    });
+    
+    function sortBlogs(type) {
+        let container = document.querySelector(".blog-list");
+        let items = Array.from(container.children);
+        
+        items.sort((a, b) => {
+            if (type === "newest") {
+                return b.getAttribute("data-date").localeCompare(a.getAttribute("data-date"));
+            } else {
+                return a.getAttribute("data-date").localeCompare(b.getAttribute("data-date"));
+            }
+        });
+        
+        items.forEach(item => container.appendChild(item));
+    }
+});
+</script>
 <footer class="footer">
     <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
     <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
