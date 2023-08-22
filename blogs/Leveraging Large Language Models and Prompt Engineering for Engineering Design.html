@@ -88,6 +88,40 @@
         body {
             margin-bottom: 60px;  /* Adjust this value based on your footer's height */
         }
+
+        /* Add these styles to your <style> section */
+        
+        .like-button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #likeButton {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+        
+        #likeButton:hover {
+            background-color: #fff;
+            color: #222;
+        }
+        
+        #likeButton:disabled {
+            background-color: #4CAF50;  /* Green color indicating liked status */
+            cursor: default;
+        }
+        
+        #likeButton .fa-thumbs-up {
+            margin-right: 5px;
+        }
     </style>
 </head>
 
@@ -126,11 +160,16 @@
         </p>
     </div>
 </section>
+    
 <!-- Like Button Section -->
-<section class="mt-3 container text-center">
-    <button id="likeButton" style="background-color: #222; color: #fff; padding: 10px 15px; border: none; cursor: pointer;">Like</button>
-    <span id="likeCount">0</span> Likes
+<section class="mt-3 container text-center like-button-container">
+    <button id="likeButton">
+        <i class="fas fa-thumbs-up"></i> <!-- Thumbs up icon -->
+        Like
+    </button>
+    <span id="likeCount" style="margin-left: 10px;">0</span> Likes
 </section>
+
 
 <!-- Comment Section using Disqus -->
 <div class="container mt-5">
