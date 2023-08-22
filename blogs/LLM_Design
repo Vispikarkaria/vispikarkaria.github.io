@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
+    <meta name="author" content="Vispi Nevile Karkaria" />
+    <title>Vispi Nevile Karkaria</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Keeping just two fonts for simplicity -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
+    <!-- Using only the latest bootstrap version -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+        }
+        .masthead {
+            background: url('78759.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100%;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .masthead h1, .masthead h2 {
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+        .navbar {
+            background-color: #222;
+            z-index: 1030; 
+        }
+        .about-section {
+            background-color: #222;
+            padding: 3rem 1.5rem;
+        }
+        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
+            color: rgba(255,255,255,.5);
+        }
+        .navbar-toggler {
+            background: rgba(255,255,255,.5);
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: rgba(255,255,255,.8);
+        }
+
+        .footer a {
+            color: grey;
+            margin: 0 1rem;
+        }
+        .edu-item {
+            border: 1px solid #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+        .smaller-text {
+            font-size: 0.85rem;
+        }
+        #cv-summary {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px;
+            align-items: center;
+            background: #222;
+        }
+
+        .blog-content {
+            color: #000; /* Black color */
+        }
+    
+        .blog-content h2, .blog-content h3 {
+            color: #000; /* Black color for headings */
+        }
+    
+        .blog-content p.lead {
+            color: #000; /* Black color for lead paragraph */
+        }
+        /* Added bottom margin to the body to create space for the footer */
+        body {
+            margin-bottom: 60px;  /* Adjust this value based on your footer's height */
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#pubs">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                <li class="nav-item active"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#foot">Links</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Blog Content -->
+<section class="mt-5 pt-5 blog-content">
+    <div class="container">
+        <h2>Leveraging Large Language Models and Prompt Engineering for Engineering Design</h2>
+        <p class="lead">Published: August 21, 2023 | Author: Vispi Nevile Karkaria</p>
+        <p>
+            With the advent of large-scale machine learning models, we are witnessing a transformative phase in various sectors. Engineering design, a field previously reliant on meticulous manual inputs, has embraced the potential of large language models (LLMs) for a more streamlined approach.
+        </p>
+        <h3>Introduction to LLMs</h3>
+        <p>
+            Large Language Models, like OpenAI's GPT series, are trained on diverse internet text. However, they do not specifically know which documents were in their training set. The ability of these models to generate coherent, diverse, and contextually appropriate content has paved the way for their application in numerous domains, including engineering design.
+        </p>
+        <h3>Role in Engineering Design</h3>
+        <p>
+            The integration of LLMs in the engineering design process has multiple facets. For starters, they can automate mundane documentation tasks. This not only saves time but also ensures error-free documentation, given the consistency of machine learning models.
+        </p>
+        <p>
+            Furthermore, with the right prompt engineering, LLMs can assist designers in brainstorming sessions by providing suggestions or even generating preliminary design drafts. This potential to co-create with AI can significantly reduce the design cycle time.
+        </p>
+        <h3>Prompt Engineering: A Game-Changer</h3>
+        <p>
+            Prompt engineering is about framing the problem statement or question in a way that guides the LLM towards a desired output. It plays a pivotal role in harnessing the true potential of an LLM. By accurately tailoring prompts, designers can elicit more accurate and relevant design solutions from the model.
+        </p>
+        <p>
+            In the context of engineering design, well-crafted prompts can lead to innovative solutions that were previously overlooked or deemed impossible.
+        </p>
+        <h3>Conclusion</h3>
+        <p>
+            The synergy between Large Language Models and engineering design, facilitated by effective prompt engineering, holds promising prospects for the future. As these models evolve and become more adept at understanding context, we can expect a more profound transformation in the realm of engineering design.
+        </p>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
