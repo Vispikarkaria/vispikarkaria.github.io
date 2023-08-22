@@ -217,14 +217,28 @@
 <script>
     document.getElementById('submitComment').addEventListener('click', function() {
         const commentInput = document.getElementById('commentInput');
-        const commentList = document.getElementById('commentList');
         
         if (commentInput.value.trim() !== "") {
-            const newComment = document.createElement('li');
-            newComment.textContent = commentInput.value.trim();
-            commentList.appendChild(newComment);
-            
-            commentInput.value = "";  // Clear the input
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'comment=' + encodeURIComponent(commentInput.value.trim()),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                const commentList = document.getElementById('commentList');
+                const newComment = document.createElement('li');
+                newComment.textContent = commentInput.value.trim();
+                commentList.appendChild(newComment);
+                
+                commentInput.value = "";  // Clear the input
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         }
     });
 </script>
