@@ -126,11 +126,17 @@
 </head>
 
 <body>
-
+    
+document.getElementById('backButton').addEventListener('click', function() {
+    window.history.back();
+});
 
 <!-- Blog Content -->
 <section class="mt-5 pt-5 blog-content">
     <div class="container">
+        <!-- Back Button -->
+        <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
+        
         <h2>Leveraging Large Language Models and Prompt Engineering for Engineering Design</h2>
         <p class="lead">Published: August 21, 2023 | Author: Vispi Nevile Karkaria</p>
         <p>
@@ -277,10 +283,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
