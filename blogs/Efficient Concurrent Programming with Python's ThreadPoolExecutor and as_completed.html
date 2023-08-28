@@ -122,6 +122,15 @@
         #likeButton .fa-thumbs-up {
             margin-right: 5px;
         }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 
@@ -134,63 +143,142 @@
 </script>
 
    <!-- Blog Content -->
-    <section class="mt-5 pt-5 blog-content">
-        <div class="container">
-            <!-- Back Button -->
-            <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
-            
-            <h2>Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</h2>
-            <p class="lead">Published: August 28, 2023 | Author: Vispi Nevile Karkaria</p>
+<section class="mt-5 pt-5 blog-content">
+    <div class="container">
+        <!-- Back Button -->
+        <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
+        
+        <!-- Main Title -->
+        <h2>Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</h2>
+        <p class="lead">Published: August 28, 2023 | Author: Vispi Nevile Karkaria</p>
 
-            <h3>How ThreadPoolExecutor and as_completed Can Help</h3>
-            <p>
-                ThreadPoolExecutor and as_completed in Python's concurrent.futures library offer an efficient way to manage concurrent tasks. They enable:
-            </p>
-            <ul>
-                <li>Better utilization of CPU cores.</li>
-                <li>Improved execution time for I/O-bound tasks or high-level structured network code.</li>
-                <li>A convenient API for handling asynchronous tasks.</li>
-            </ul>
+        <!-- Section: Introduction -->
+        <h3>How ThreadPoolExecutor and as_completed Can Help</h3>
+        <p>ThreadPoolExecutor and as_completed in Python's concurrent.futures library offer an efficient way to manage concurrent tasks. They enable:</p>
+        <ul>
+            <li>Better utilization of CPU cores, making your application faster and more efficient.</li>
+            <li>Improved execution time for I/O-bound tasks like file operations or network requests, as they don't have to wait for each other to complete.</li>
+            <li>A convenient API for handling asynchronous tasks, removing much of the complexity associated with concurrent programming.</li>
+        </ul>
 
-            <h3>Use Cases</h3>
-            <h4>Data Scraping</h4>
-            <p>
-                ThreadPoolExecutor can significantly expedite data scraping tasks by running multiple scrapers in parallel, reducing the time it takes to retrieve data from multiple sources.
-            </p>
-            
-            <h4>Image Processing</h4>
-            <p>
-                Tasks like resizing, filtering, and transformation can be parallelized efficiently to improve overall processing speed.
-            </p>
+        <!-- Python Code Example for Introduction -->
+        <h4>Python Code Example</h4>
+        <p>To demonstrate, here is a simple Python code snippet using ThreadPoolExecutor and as_completed:</p>
+        <pre><code>
+        from concurrent.futures import ThreadPoolExecutor, as_completed
 
-            <h4>API Calls</h4>
-            <p>
-                Making API calls sequentially can be a bottleneck in your application. Using ThreadPoolExecutor, you can make multiple API requests in parallel, thus saving a considerable amount of time.
-            </p>
+        def worker_function(x):
+            return x * x
 
-            <h3>Tips and Caveats</h3>
-            <ul>
-                <li>Always remember to close the executor to free up resources.</li>
-                <li>Be mindful of thread safety when dealing with shared resources.</li>
-                <li>Beware of the Global Interpreter Lock (GIL) in CPython, which could hinder true parallelism.</li>
-            </ul>
+        # Create a ThreadPoolExecutor
+        with ThreadPoolExecutor() as executor:
+            # Submit tasks to the executor
+            futures = {executor.submit(worker_function, i): i for i in range(5)}
+            # Process results as they complete
+            for future in as_completed(futures):
+                print(future.result())
+        </code></pre>
+        <p>The code above creates a ThreadPoolExecutor and submits five tasks to it. The tasks are processed concurrently, and their results are printed as they become available.</p>
 
-            <h3>Conclusion</h3>
-            <p>
-                ThreadPoolExecutor and as_completed offer an efficient and convenient way to handle concurrent programming tasks in Python. Whether you're working on data scraping, image processing, or API interactions, they can significantly improve the performance and efficiency of your application. 
-            </p>
-            <p>
-                I encourage you to experiment and find the right balance between concurrency and parallelism for your specific needs.
-            </p>
+        <!-- Section: Use Cases -->
+        <h3>Use Cases</h3>
+        <h4>Data Scraping</h4>
+        <p>ThreadPoolExecutor can significantly expedite data scraping tasks by running multiple scrapers in parallel, thus reducing the time it takes to retrieve data from multiple sources.</p>
 
-            <h3>Further Reading</h3>
-            <ul>
-                <li><a href="https://docs.python.org/3/library/concurrent.futures.html" target="_blank">Python concurrent.futures Documentation</a></li>
-                <li><a href="https://realpython.com/python-concurrency/" target="_blank">Real Python: An Intro to Threading in Python</a></li>
-            </ul>
+        <!-- Python Code Example for Data Scraping -->
+        <h4>Python Code Example</h4>
+        <pre><code>
+        from concurrent.futures import ThreadPoolExecutor
+        import requests
 
-        </div>
-    </section>
+        def fetch_data(url):
+            return requests.get(url).text
+
+        urls = ['https://example.com/page1', 'https://example.com/page2']
+
+        # Create a ThreadPoolExecutor
+        with ThreadPoolExecutor() as executor:
+            # Fetch data from multiple URLs in parallel
+            results = list(executor.map(fetch_data, urls))
+        </code></pre>
+        <p>This example demonstrates how to perform web scraping on two URLs concurrently. The `executor.map()` function is a convenient way to execute the `fetch_data` function on each URL in the `urls` list. The results are returned in a list.</p>
+
+
+        <h4>Image Processing</h4>
+        <p>
+            Tasks like resizing, filtering, and transformation can be parallelized using ThreadPoolExecutor to improve the overall processing speed. This is particularly beneficial when you have to process a large number of images.
+        </p>
+        
+        <!-- Python Code Example for Image Processing -->
+        <h4>Python Code Example</h4>
+        <pre><code>
+        from PIL import Image
+        from concurrent.futures import ThreadPoolExecutor
+
+        def resize_image(image_path, output_path):
+            img = Image.open(image_path)
+            img = img.resize((300, 300))
+            img.save(output_path)
+
+        image_paths = ['image1.jpg', 'image2.jpg', 'image3.jpg']
+        output_paths = ['image1_resized.jpg', 'image2_resized.jpg', 'image3_resized.jpg']
+
+        with ThreadPoolExecutor() as executor:
+            executor.map(resize_image, image_paths, output_paths)
+        </code></pre>
+        <p>This Python snippet uses the Pillow library to resize images concurrently. ThreadPoolExecutor's `map()` function handles the parallel processing, significantly speeding up the resizing operation.</p>
+
+        <h4>API Calls</h4>
+        <p>
+            Making API calls sequentially can be a bottleneck in your application. By using ThreadPoolExecutor, you can make multiple API requests in parallel, thus saving a considerable amount of time.
+        </p>
+
+        <!-- Python Code Example for API Calls -->
+        <h4>Python Code Example</h4>
+        <pre><code>
+        import requests
+        from concurrent.futures import ThreadPoolExecutor
+
+        def fetch_data_from_api(api_url):
+            return requests.get(api_url).json()
+
+        api_urls = ['https://api.example.com/data1', 'https://api.example.com/data2']
+
+        with ThreadPoolExecutor() as executor:
+            results = list(executor.map(fetch_data_from_api, api_urls))
+        </code></pre>
+        <p>The above code demonstrates how to make API requests concurrently using ThreadPoolExecutor. The `executor.map()` function concurrently fetches data from the list of API URLs and stores the results in a list.</p>
+
+        <!-- Section: Tips and Caveats -->
+        <h3>Tips and Caveats</h3>
+        <ul>
+            <li>Always remember to close the executor using the `with` statement to ensure that all resources are freed up.</li>
+            <li>Be cautious of thread safety, especially when dealing with shared resources like global variables or file systems.</li>
+            <li>Beware of the Global Interpreter Lock (GIL) in CPython, which can hinder true parallelism when performing CPU-bound tasks.</li>
+            <li>Adjust the number of threads based on your system's capabilities and the nature of your tasks. Excessive threads might lead to context switching overhead.</li>
+        </ul>
+
+        <!-- Section: Conclusion -->
+        <h3>Conclusion</h3>
+        <p>
+            ThreadPoolExecutor and as_completed offer an efficient and convenient way to handle concurrent programming tasks in Python. By understanding their capabilities and limitations, you can significantly improve the performance and efficiency of various applications, be it data scraping, image processing, or API interactions.
+        </p>
+        <p>
+            I encourage you to experiment with these tools and find the right balance between concurrency and parallelism to meet your specific needs.
+        </p>
+
+        <!-- Section: Further Reading -->
+        <h3>Further Reading</h3>
+        <ul>
+            <li><a href="https://docs.python.org/3/library/concurrent.futures.html" target="_blank">Python concurrent.futures Documentation</a></li>
+            <li><a href="https://realpython.com/python-concurrency/" target="_blank">Real Python: An Intro to Threading in Python</a></li>
+            <li><a href="https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python" target="_blank">Toptal: Beginners Guide to Concurrency and Parallelism in Python</a></li>
+        </ul>
+
+    </div>
+</section>
+
+
     
 <!-- Like Button Section -->
 <section class="mt-3 container text-center like-button-container">
