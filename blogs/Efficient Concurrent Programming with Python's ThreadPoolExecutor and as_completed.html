@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
+    <meta name="author" content="Vispi Nevile Karkaria" />
+    <title>Vispi Nevile Karkaria</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Keeping just two fonts for simplicity -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
+    <!-- Using only the latest bootstrap version -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+        }
+        .masthead {
+            background: url('78759.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100%;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .masthead h1, .masthead h2 {
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+        .navbar {
+            background-color: #222;
+            z-index: 1030; 
+        }
+        .about-section {
+            background-color: #222;
+            padding: 3rem 1.5rem;
+        }
+        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
+            color: rgba(255,255,255,.5);
+        }
+        .navbar-toggler {
+            background: rgba(255,255,255,.5);
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: rgba(255,255,255,.8);
+        }
+
+        .footer a {
+            color: grey;
+            margin: 0 1rem;
+        }
+        .edu-item {
+            border: 1px solid #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+        .smaller-text {
+            font-size: 0.85rem;
+        }
+        #cv-summary {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px;
+            align-items: center;
+            background: #222;
+        }
+
+        .blog-content {
+            color: #000; /* Black color */
+        }
+    
+        .blog-content h2, .blog-content h3 {
+            color: #000; /* Black color for headings */
+        }
+    
+        .blog-content p.lead {
+            color: #000; /* Black color for lead paragraph */
+        }
+        /* Added bottom margin to the body to create space for the footer */
+        body {
+            margin-bottom: 60px;  /* Adjust this value based on your footer's height */
+        }
+
+        /* Add these styles to your <style> section */
+        
+        .like-button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #likeButton {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+        
+        #likeButton:hover {
+            background-color: #fff;
+            color: #222;
+        }
+        
+        #likeButton:disabled {
+            background-color: #4CAF50;  /* Green color indicating liked status */
+            cursor: default;
+        }
+        
+        #likeButton .fa-thumbs-up {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+<script>
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+    });
+</script>
+
+   <!-- Blog Content -->
+    <section class="mt-5 pt-5 blog-content">
+        <div class="container">
+            <!-- Back Button -->
+            <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
+            
+            <h2>Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</h2>
+            <p class="lead">Published: August 28, 2023 | Author: Vispi Nevile Karkaria</p>
+
+            <h3>How ThreadPoolExecutor and as_completed Can Help</h3>
+            <p>
+                ThreadPoolExecutor and as_completed in Python's concurrent.futures library offer an efficient way to manage concurrent tasks. They enable:
+            </p>
+            <ul>
+                <li>Better utilization of CPU cores.</li>
+                <li>Improved execution time for I/O-bound tasks or high-level structured network code.</li>
+                <li>A convenient API for handling asynchronous tasks.</li>
+            </ul>
+
+            <h3>Use Cases</h3>
+            <h4>Data Scraping</h4>
+            <p>
+                ThreadPoolExecutor can significantly expedite data scraping tasks by running multiple scrapers in parallel, reducing the time it takes to retrieve data from multiple sources.
+            </p>
+            
+            <h4>Image Processing</h4>
+            <p>
+                Tasks like resizing, filtering, and transformation can be parallelized efficiently to improve overall processing speed.
+            </p>
+
+            <h4>API Calls</h4>
+            <p>
+                Making API calls sequentially can be a bottleneck in your application. Using ThreadPoolExecutor, you can make multiple API requests in parallel, thus saving a considerable amount of time.
+            </p>
+
+            <h3>Tips and Caveats</h3>
+            <ul>
+                <li>Always remember to close the executor to free up resources.</li>
+                <li>Be mindful of thread safety when dealing with shared resources.</li>
+                <li>Beware of the Global Interpreter Lock (GIL) in CPython, which could hinder true parallelism.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>
+                ThreadPoolExecutor and as_completed offer an efficient and convenient way to handle concurrent programming tasks in Python. Whether you're working on data scraping, image processing, or API interactions, they can significantly improve the performance and efficiency of your application. 
+            </p>
+            <p>
+                I encourage you to experiment and find the right balance between concurrency and parallelism for your specific needs.
+            </p>
+
+            <h3>Further Reading</h3>
+            <ul>
+                <li><a href="https://docs.python.org/3/library/concurrent.futures.html" target="_blank">Python concurrent.futures Documentation</a></li>
+                <li><a href="https://realpython.com/python-concurrency/" target="_blank">Real Python: An Intro to Threading in Python</a></li>
+            </ul>
+
+        </div>
+    </section>
+    
+<!-- Like Button Section -->
+<section class="mt-3 container text-center like-button-container">
+    <button id="likeButton">
+        <i class="fas fa-thumbs-up"></i> <!-- Thumbs up icon -->
+        Like
+    </button>
+    <span id="likeCount" style="margin-left: 10px;">0</span> Likes
+</section>
+
+
+<!-- Simple Comment Section -->
+<div class="container mt-5">
+    <h3>Leave a Comment</h3>
+
+    <!-- Comment Form -->
+    <div class="comment-form">
+        <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea><br>
+        <button id="submitComment">Submit</button>
+    </div>
+
+    <!-- List of Comments -->
+    <div class="comments-list mt-4">
+        <ul id="commentList"></ul>
+    </div>
+</div><!-- CSS for the Comment Section -->
+<style>
+    .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .comment-form button {
+        background-color: #222;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .comments-list ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .comments-list li {
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- JavaScript for the Comment Section -->
+<script>
+    document.getElementById('submitComment').addEventListener('click', function() {
+        const commentInput = document.getElementById('commentInput');
+        
+        if (commentInput.value.trim() !== "") {
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'comment=' + encodeURIComponent(commentInput.value.trim()),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                const commentList = document.getElementById('commentList');
+                const newComment = document.createElement('li');
+                newComment.textContent = commentInput.value.trim();
+                commentList.appendChild(newComment);
+                
+                commentInput.value = "";  // Clear the input
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    });
+</script>
+
+
+<footer class="footer">
+    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
+</footer>
+
+<script>
+    // Time Tracking Script
+    let startTime = new Date().getTime();
+    
+    window.addEventListener('beforeunload', function() {
+        let endTime = new Date().getTime();
+        let timeSpent = (endTime - startTime) / 1000;
+        console.log('User spent', timeSpent, 'seconds on the page.');
+        
+        // You can replace the console.log with an AJAX call to send data to your server.
+    });
+
+    // Like Button Script
+    let likeCount = 0;
+
+    document.getElementById('likeButton').addEventListener('click', function() {
+        likeCount++;
+        document.getElementById('likeCount').innerText = likeCount;
+        this.disabled = true; // Disables the button after one click
+    });
+</script>
+
+<!-- External Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
