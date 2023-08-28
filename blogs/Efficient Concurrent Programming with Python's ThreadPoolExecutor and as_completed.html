@@ -146,8 +146,11 @@
 <section class="mt-5 pt-5 blog-content">
     <div class="container">
         <!-- Back Button -->
-        <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
-        
+        <button id="backButton" onclick="goBack()" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
+        function goBack() {
+            window.location.href = "https://www.example.com/your-back-link";
+        }
+
         <!-- Main Title -->
         <h2>Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</h2>
         <p class="lead">Published: August 28, 2023 | Author: Vispi Nevile Karkaria</p>
