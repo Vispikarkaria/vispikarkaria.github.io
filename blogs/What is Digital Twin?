@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
+    <meta name="author" content="Vispi Nevile Karkaria" />
+    <title>Vispi Nevile Karkaria</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Keeping just two fonts for simplicity -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
+    <!-- Using only the latest bootstrap version -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+        }
+        .masthead {
+            background: url('78759.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100%;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .masthead h1, .masthead h2 {
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+        .navbar {
+            background-color: #222;
+            z-index: 1030; 
+        }
+        .about-section {
+            background-color: #222;
+            padding: 3rem 1.5rem;
+        }
+        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
+            color: rgba(255,255,255,.5);
+        }
+        .navbar-toggler {
+            background: rgba(255,255,255,.5);
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: rgba(255,255,255,.8);
+        }
+
+        .footer a {
+            color: grey;
+            margin: 0 1rem;
+        }
+        .edu-item {
+            border: 1px solid #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+        .smaller-text {
+            font-size: 0.85rem;
+        }
+        #cv-summary {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px;
+            align-items: center;
+            background: #222;
+        }
+
+        .blog-content {
+            color: #000; /* Black color */
+        }
+    
+        .blog-content h2, .blog-content h3 {
+            color: #000; /* Black color for headings */
+        }
+    
+        .blog-content p.lead {
+            color: #000; /* Black color for lead paragraph */
+        }
+        /* Added bottom margin to the body to create space for the footer */
+        body {
+            margin-bottom: 60px;  /* Adjust this value based on your footer's height */
+        }
+
+        /* Add these styles to your <style> section */
+        
+        .like-button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #likeButton {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+        
+        #likeButton:hover {
+            background-color: #fff;
+            color: #222;
+        }
+        
+        #likeButton:disabled {
+            background-color: #4CAF50;  /* Green color indicating liked status */
+            cursor: default;
+        }
+        
+        #likeButton .fa-thumbs-up {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Blog Content -->
+<section class="mt-5 pt-5 blog-content">
+    <div class="container">
+        <!-- Back Button -->
+         <a href="https://vispikarkaria.github.io/blog.html">
+            <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
+        </a>
+        
+        <h2>What is a Digital Twin?</h2>
+        <p class="lead">Published: August 7, 2024  | Author: Vispi Nevile Karkaria</p>
+
+        <p>
+            In the evolving landscape of technology and industry, the term "digital twin" has emerged as a key concept driving innovation and efficiency. But what exactly is a digital twin, and how does it impact various sectors?
+        </p>
+
+        <h3>Understanding Digital Twins</h3>
+        <p>
+            A digital twin is a virtual replica of a physical object, system, or process. This digital counterpart is created using data from the physical entity and advanced simulation techniques, allowing it to mirror the real-world counterpart in real-time. The concept extends beyond mere static models; digital twins are dynamic, continuously updated with data from sensors and other inputs, enabling them to reflect changes, predict outcomes, and optimize performance.
+        </p>
+        <p>The diagram below illustrates the components and interactions within a digital twin system:</p>
+        <img src="file-G16MHbBegWbXG7qXl4NuZSpQ" alt="Digital Twin Diagram" class="img-fluid mb-3">
+
+        <h3>The Components of a Digital Twin</h3>
+        <p>1. <strong>Physical System</strong>: This includes the real-world objects or systems being replicated, such as manufacturing equipment, automobiles, and industrial lines.
+           <ul>
+               <li><strong>Sensors</strong>: Devices that collect real-time data from the physical system, monitoring various parameters like temperature, pressure, and movement.</li>
+               <li><strong>Actuators</strong>: Components that can interact with the physical system to influence its operation, such as motors and control valves.</li>
+           </ul>
+        </p>
+        <p>2. <strong>Data Storage and Monitoring</strong>: The collected data is stored and continuously monitored to keep the digital twin updated. This data is crucial for accurate representation and analysis.
+           <ul>
+               <li><strong>Data Storage</strong>: Centralized repositories where sensor data is accumulated.</li>
+               <li><strong>Data Monitoring</strong>: Real-time tracking and analysis of the data to detect anomalies, predict failures, and ensure optimal performance.</li>
+           </ul>
+        </p>
+        <p>3. <strong>Digital System</strong>: The virtual counterpart that processes the data and provides actionable insights.
+           <ul>
+               <li><strong>Design Decision</strong>: Utilizing data and simulations to make informed design choices, optimizing performance, and reducing costs.</li>
+               <li><strong>Physics-Based Simulation</strong>: Using mathematical models to simulate the physical behavior of the system, enabling predictive analysis and optimization.</li>
+               <li><strong>Artificial Intelligence</strong>: Leveraging AI algorithms to analyze data, identify patterns, and make predictions.</li>
+               <li><strong>Dashboard</strong>: Visual interfaces that present data and insights in an accessible format, aiding decision-making.</li>
+           </ul>
+        </p>
+
+        <h3>Applications of Digital Twins</h3>
+        <p>Digital twins have a wide range of applications across various industries:</p>
+        <ul>
+            <li><strong>Manufacturing</strong>: In manufacturing, digital twins are used to monitor equipment, predict failures, and optimize production processes. For example, a digital twin of a production line can simulate different scenarios to identify the most efficient workflow, reducing downtime and improving output.</li>
+            <li><strong>Healthcare</strong>: In healthcare, digital twins of patients can be created to personalize treatment plans, simulate surgeries, and monitor health conditions in real-time, leading to better patient outcomes.</li>
+            <li><strong>Smart Cities</strong>: Urban planners use digital twins of cities to manage infrastructure, optimize traffic flow, and improve public services. These models help in simulating the impact of new developments and in making data-driven decisions.</li>
+            <li><strong>Automotive</strong>: Automotive manufacturers create digital twins of vehicles to test designs, predict maintenance needs, and enhance vehicle performance. This approach helps in reducing the time and cost associated with physical prototyping.</li>
+            <li><strong>Energy</strong>: In the energy sector, digital twins of power plants, wind turbines, and other assets are used to monitor performance, predict maintenance needs, and improve energy efficiency.</li>
+        </ul>
+
+        <h3>Benefits of Digital Twins</h3>
+        <ul>
+            <li><strong>Improved Decision-Making</strong>: By providing a detailed and real-time view of the physical entity, digital twins enable better and faster decision-making.</li>
+            <li><strong>Predictive Maintenance</strong>: Digital twins can predict equipment failures before they occur, allowing for proactive maintenance and reducing downtime.</li>
+            <li><strong>Enhanced Efficiency</strong>: Optimizing operations and processes using digital twins can lead to significant efficiency gains and cost savings.</li>
+            <li><strong>Innovation</strong>: Digital twins facilitate experimentation and innovation by allowing companies to test new ideas and strategies in a virtual environment before implementing them in the real world.</li>
+            <li><strong>Risk Management</strong>: They help in identifying potential risks and mitigating them by simulating various scenarios and their outcomes.</li>
+        </ul>
+
+        <h3>Challenges and Future Directions</h3>
+        <p>Despite their advantages, implementing digital twins comes with challenges. These include the high cost of setup, the need for accurate and high-quality data, and the complexity of integrating various technologies. However, as technology continues to advance, these challenges are becoming more manageable.</p>
+        <p>The future of digital twins is promising, with developments in artificial intelligence, machine learning, and IoT driving their evolution. As digital twins become more sophisticated, their ability to provide deeper insights and more accurate predictions will only improve, making them an indispensable tool across industries.</p>
+
+        <h3>Conclusion</h3>
+        <p>Digital twins represent a significant leap forward in how we understand and interact with the physical world. By creating a virtual counterpart that mirrors and predicts the behavior of real-world entities, digital twins are transforming industries and driving the next wave of technological innovation. As we continue to harness the power of data and advanced analytics, the potential of digital twins will only continue to expand, opening up new possibilities for efficiency, innovation, and growth.</p>
+    </div>
+</section>
+
+<!-- Like Button Section -->
+<section class="mt-3 container text-center like-button-container">
+    <button id="likeButton">
+        <i class="fas fa-thumbs-up"></i> <!-- Thumbs up icon -->
+        Like
+    </button>
+    <span id="likeCount" style="margin-left: 10px;">0</span> Likes
+</section>
+
+<!-- Simple Comment Section -->
+<div class="container mt-5">
+    <h3>Leave a Comment</h3>
+
+    <!-- Comment Form -->
+    <div class="comment-form">
+        <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea><br>
+        <button id="submitComment">Submit</button>
+    </div>
+
+    <!-- List of Comments -->
+    <div class="comments-list mt-4">
+        <ul id="commentList"></ul>
+    </div>
+</div><!-- CSS for the Comment Section -->
+<style>
+    .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .comment-form button {
+        background-color: #222;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .comments-list ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .comments-list li {
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- JavaScript for the Comment Section -->
+<script>
+    document.getElementById('submitComment').addEventListener('click', function() {
+        const commentInput = document.getElementById('commentInput');
+        
+        if (commentInput.value.trim() !== "") {
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'comment=' + encodeURIComponent(commentInput.value.trim()),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                const commentList = document.getElementById('commentList');
+                const newComment = document.createElement('li');
+                newComment.textContent = commentInput.value.trim();
+                commentList.appendChild(newComment);
+                
+                commentInput.value = "";  // Clear the input
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    });
+</script>
+
+<footer class="footer">
+    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
+    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
+</footer>
+
+<script>
+    // Time Tracking Script
+    let startTime = new Date().getTime();
+    
+    window.addEventListener('beforeunload', function() {
+        let endTime = new Date().getTime();
+        let timeSpent = (endTime - startTime) / 1000;
+        console.log('User spent', timeSpent, 'seconds on the page.');
+        
+        // You can replace the console.log with an AJAX call to send data to your server.
+    });
+
+    // Like Button Script
+    let likeCount = 0;
+
+    document.getElementById('likeButton').addEventListener('click', function() {
+        likeCount++;
+        document.getElementById('likeCount').innerText = likeCount;
+        this.disabled = true; // Disables the button after one click
+    });
+</script>
+
+<!-- External Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
