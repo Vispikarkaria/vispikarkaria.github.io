@@ -20,9 +20,10 @@
             margin: 0;
             font-family: 'Nunito', sans-serif;
             color: #fff;
+            background-color: #121212;
         }
         .masthead {
-            background: url('LLM_Engineering.jpg') no-repeat center center;
+            background: url('78759.jpg') no-repeat center center;
             background-size: cover;
             height: 100%;
             text-align: center;
@@ -74,15 +75,15 @@
         }
 
         .blog-content {
-            color: #000; /* Black color */
+            color: #e0e0e0; /* Light grey color */
         }
     
         .blog-content h2, .blog-content h3 {
-            color: #000; /* Black color for headings */
+            color: #e0e0e0; /* Light grey color for headings */
         }
     
         .blog-content p.lead {
-            color: #000; /* Black color for lead paragraph */
+            color: #e0e0e0; /* Light grey color for lead paragraph */
         }
         /* Added bottom margin to the body to create space for the footer */
         body {
@@ -98,7 +99,7 @@
         }
         
         #likeButton {
-            background-color: #222;
+            background-color: #444;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -123,18 +124,62 @@
             margin-right: 5px;
         }
 
-        pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border: 1px solid #ccc;
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
             border-radius: 4px;
-            font-size: 14px;
-            overflow-x: auto;
+            border: 1px solid #ccc;
+        }
+        .comment-form button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .comments-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .comments-list li {
+            border-bottom: 1px solid #ccc;
+            padding: 8px 0;
+            margin-bottom: 10px;
+        }
+        .back-button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #fff;
+            color: #222;
+        }
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .image-container img {
+            border: 1px solid #444;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
+
     
 <script>
     document.getElementById('backButton').addEventListener('click', function() {
