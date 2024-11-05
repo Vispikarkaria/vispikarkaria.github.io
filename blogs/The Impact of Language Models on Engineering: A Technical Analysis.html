@@ -9,19 +9,19 @@
     <title>Vispi Nevile Karkaria</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Keeping just two fonts for simplicity -->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
-    <!-- Using only the latest bootstrap version -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
+        /* Dark Theme Styles */
         body, html {
             height: 100%;
             margin: 0;
             font-family: 'Nunito', sans-serif;
-            color: #fff;
+            color: #e0e0e0;
             background-color: #121212;
         }
+
         .masthead {
             background: url('78759.jpg') no-repeat center center;
             background-size: cover;
@@ -29,75 +29,73 @@
             text-align: center;
             padding-top: 70px;
         }
+
         .masthead h1, .masthead h2 {
             font-weight: 700;
             letter-spacing: .1rem;
+            color: #e0e0e0;
         }
+
         .navbar {
             background-color: #222;
-            z-index: 1030; 
         }
+
+        .navbar-dark .navbar-brand:hover,
+        .navbar-dark .nav-link:hover {
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .navbar-toggler {
+            background: rgba(255, 255, 255, .5);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: rgba(255, 255, 255, .8);
+        }
+
         .about-section {
             background-color: #222;
             padding: 3rem 1.5rem;
-        }
-        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
-            color: rgba(255,255,255,.5);
-        }
-        .navbar-toggler {
-            background: rgba(255,255,255,.5);
-        }
-        .navbar-nav .nav-item .nav-link {
-            color: rgba(255,255,255,.8);
+            color: #e0e0e0;
         }
 
         .footer a {
             color: grey;
             margin: 0 1rem;
         }
+
         .edu-item {
             border: 1px solid #ffffff;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
-            background-color: transparent;
+            background-color: #333;
         }
+
         .smaller-text {
             font-size: 0.85rem;
+            color: #e0e0e0;
         }
+
         #cv-summary {
             position: sticky;
             top: 0;
             z-index: 100;
             padding: 20px;
-            align-items: center;
             background: #222;
+            color: #e0e0e0;
         }
 
-        .blog-content {
-            color: #e0e0e0; /* Light grey color */
-        }
-    
-        .blog-content h2, .blog-content h3 {
-            color: #e0e0e0; /* Light grey color for headings */
-        }
-    
-        .blog-content p.lead {
-            color: #e0e0e0; /* Light grey color for lead paragraph */
-        }
-        /* Added bottom margin to the body to create space for the footer */
-        body {
-            margin-bottom: 60px;  /* Adjust this value based on your footer's height */
+        .blog-content h2, .blog-content h3, .blog-content p.lead {
+            color: #e0e0e0;
         }
 
-        /* Add these styles to your <style> section */
-        
         .like-button-container {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         #likeButton {
             background-color: #444;
             color: #fff;
@@ -107,19 +105,19 @@
             border-radius: 5px;
             display: flex;
             align-items: center;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            transition: background-color 0.3s, color 0.3s;
         }
-        
+
         #likeButton:hover {
-            background-color: #fff;
-            color: #222;
+            background-color: #666;
+            color: #e0e0e0;
         }
-        
+
         #likeButton:disabled {
-            background-color: #4CAF50;  /* Green color indicating liked status */
+            background-color: #4CAF50;
             cursor: default;
         }
-        
+
         #likeButton .fa-thumbs-up {
             margin-right: 5px;
         }
@@ -129,8 +127,11 @@
             padding: 10px;
             margin: 10px 0;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid #555;
+            background-color: #333;
+            color: #e0e0e0;
         }
+
         .comment-form button {
             background-color: #444;
             color: #fff;
@@ -139,15 +140,23 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
+        .comment-form button:hover {
+            background-color: #666;
+        }
+
         .comments-list ul {
             list-style-type: none;
             padding-left: 0;
         }
+
         .comments-list li {
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #555;
             padding: 8px 0;
             margin-bottom: 10px;
+            color: #e0e0e0;
         }
+
         .back-button {
             background-color: #444;
             color: #fff;
@@ -158,26 +167,25 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
+
         .back-button:hover {
-            background-color: #fff;
-            color: #222;
+            background-color: #666;
+            color: #e0e0e0;
         }
+
         .image-caption {
             text-align: center;
             font-size: 0.9rem;
-            color: #ccc;
+            color: #bbb;
         }
-        .image-container {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
+
         .image-container img {
             border: 1px solid #444;
             border-radius: 5px;
         }
     </style>
 </head>
-
+    
 <body>
 
     
