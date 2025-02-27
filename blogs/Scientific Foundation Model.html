@@ -118,10 +118,10 @@
     <h3>Leave a Comment</h3>
 
     <!-- Comment Form -->
-    <div class="comment-form">
-        <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea><br>
-        <button id="submitComment">Submit</button>
-    </div>
+    <form action="https://formspree.io/f/meoeyqbj" method="POST" class="comment-form">
+        <textarea id="commentInput" name="comment" rows="4" placeholder="Write your comment here..."></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
 
     <!-- List of Comments -->
     <div class="comments-list mt-4">
@@ -157,30 +157,17 @@
 
 <!-- JavaScript for the Comment Section -->
 <script>
-    document.getElementById('submitComment').addEventListener('click', function() {
+    document.querySelector('.comment-form').addEventListener('submit', function(event) {
+        event.preventDefault();
         const commentInput = document.getElementById('commentInput');
         
         if (commentInput.value.trim() !== "") {
-            fetch('send_email.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'comment=' + encodeURIComponent(commentInput.value.trim()) + '&email=vispikarkaria127@gmail.com',
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                const commentList = document.getElementById('commentList');
-                const newComment = document.createElement('li');
-                newComment.textContent = commentInput.value.trim();
-                commentList.appendChild(newComment);
-                
-                commentInput.value = "";  // Clear the input
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('li');
+            newComment.textContent = commentInput.value.trim();
+            commentList.appendChild(newComment);
+            
+            commentInput.value = "";  // Clear the input
         }
     });
 </script>
