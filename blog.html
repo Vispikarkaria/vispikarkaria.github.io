@@ -1,244 +1,342 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" id="page-top">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Vispi Nevile Karkaria - Blog Index</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        /* Dark Theme Styles */
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Nunito', sans-serif;
-            color: #e0e0e0;
-            background-color: #121212;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vispi Nevile Karkaria — Blog Index</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
-        .masthead {
-            background: url('78759.jpg') no-repeat center center;
-            background-size: cover;
-            height: 100%;
-            text-align: center;
-            padding-top: 70px;
-            color: #e0e0e0;
-        }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet" />
 
-        .masthead h1, .masthead h2 {
-            font-weight: 700;
-            letter-spacing: .1rem;
-        }
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 
-        .navbar {
-            background-color: #222;
-        }
+  <!-- Bootstrap 5 (no jQuery) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
-            color: rgba(255, 255, 255, .7);
-        }
+  <style>
+    :root{
+      --bg: #0b0e14;
+      --bg-2: #0f1420;
+      --text: #e6edf3;
+      --muted: #a4b1c0;
+      --accent: #7cc6ff;
+      --accent-2: #8ef5c5;
+      --glass: rgba(255,255,255,0.06);
+      --glass-strong: rgba(255,255,255,0.10);
+      --border: rgba(255,255,255,0.15);
+      --shadow: 0 10px 30px rgba(0,0,0,0.45);
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --nav-h: 70px;
+    }
 
-        .navbar-toggler {
-            background: rgba(255, 255, 255, .5);
-        }
+    /* Background + typography */
+    html, body{
+      height: 100%;
+      background: radial-gradient(1200px 800px at 15% 15%, #162035 0%, transparent 60%),
+                  radial-gradient(1000px 700px at 85% 20%, #1a243a 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 40% 85%, #152032 0%, transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover, a:focus { color: #b9e3ff; text-decoration: underline; }
 
-        .navbar-nav .nav-item .nav-link {
-            color: rgba(255, 255, 255, .8);
-        }
+    /* Glass primitives */
+    .glass {
+      background: var(--glass);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .glass-strong {
+      background: var(--glass-strong);
+      backdrop-filter: saturate(180%) blur(18px);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
+    }
+    .glass-card {
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(124,198,255,0.45);
+      box-shadow: 0 14px 40px rgba(15,94,171,0.35);
+    }
 
-        .about-section {
-            background-color: #222;
-            padding: 3rem 1.5rem;
-            color: #e0e0e0;
-        }
+    /* Navbar */
+    .navbar {
+      height: var(--nav-h);
+      background: linear-gradient(to bottom, rgba(11,14,20,0.85), rgba(11,14,20,0.55));
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .navbar .nav-link {
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    .navbar .nav-link.active, .navbar .nav-link:hover {
+      color: var(--text);
+    }
+    .brand-accent {
+      font-weight: 900;
+      letter-spacing: .4px;
+      color: var(--text);
+    }
 
-        .footer a {
-            color: grey;
-            margin: 0 1rem;
-        }
+    /* Header / intro */
+    .page-intro {
+      padding-top: calc(var(--nav-h) + 2.5rem);
+      padding-bottom: 1.25rem;
+    }
+    .intro-card .title {
+      font-size: clamp(1.6rem, 3.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: .3px;
+    }
+    .intro-card .subtitle {
+      color: var(--muted);
+      margin-top: .4rem;
+      margin-bottom: 0;
+      font-size: .98rem;
+    }
 
-        .edu-item {
-            border: 1px solid #e0e0e0;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background-color: #333;
-        }
+    /* Filter bar */
+    .filter-bar {
+      gap: .6rem;
+    }
+    .filter-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      padding: .5rem .9rem;
+    }
+    .filter-btn.active {
+      color: var(--text);
+      border-color: rgba(124,198,255,0.5);
+      background: rgba(124,198,255,0.10);
+    }
+    .filter-btn:hover { color: var(--text); }
 
-        .smaller-text {
-            font-size: 0.85rem;
-            color: #e0e0e0;
-        }
+    /* Blog grid */
+    .blog-card .post-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: .35rem;
+    }
+    .blog-card .meta {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: .2rem;
+    }
 
-        #cv-summary {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 20px;
-            background: #222;
-            color: #e0e0e0;
-        }
+    /* Footer */
+    footer.footer{
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 2.5rem;
+      background: linear-gradient(180deg, rgba(11,14,20,0) 0%, rgba(11,14,20,0.6) 100%);
+    }
+    .footer a{
+      color: var(--muted);
+      margin: 0 .6rem;
+      padding: .4rem .55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .footer a:hover{
+      color: var(--text);
+      border-color: rgba(124,198,255,0.35);
+      background: rgba(124,198,255,0.08);
+      text-decoration: none;
+    }
 
-        .blog-content {
-            color: #e0e0e0;
-        }
-
-        .blog-content h2, .blog-content h3, .blog-content p.lead {
-            color: #e0e0e0;
-        }
-
-        .blog-item a {
-            color: #e0e0e0;
-            text-decoration: none;
-        }
-
-        .blog-item a:hover {
-            color: #fff;
-        }
-
-        /* Adjusted link colors for filters */
-        .list-inline-item a {
-            color: #e0e0e0;
-            text-decoration: none;
-        }
-
-        .list-inline-item a:hover {
-            color: #fff;
-        }
-
-        /* Added bottom margin to the body to create space for the footer */
-        body {
-            margin-bottom: 60px;
-        }
-
-    </style>
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md fixed-top glass" id="mainNav" role="navigation" aria-label="Primary">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">HOME</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#pubs">Publications</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-                <li class="nav-item active"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#foot">Links</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Blog Index Content -->
-<section class="mt-5 pt-5 blog-content">
-    <div class="container">
-
-        <!-- Sorting Filters -->
-        <ul class="list-inline text-center">
-            <li class="list-inline-item mx-3"><a href="#newest" class="font-weight-bold">Newest to Oldest</a></li>
-            <li class="list-inline-item mx-3"><a href="#oldest" class="text-muted">Oldest to Newest</a></li>
+      <a class="navbar-brand brand-accent" href="index.html">Vispi NK</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+              aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#pubs">Publications</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#foot">Links</a></li>
         </ul>
-
-        <!-- Blog List -->
-        <div class="blog-list mt-4">
-
-
-            <!-- Example Blog Item -->
-            <div class="blog-item" data-date="2025-02-26">
-                <h3><a href="blogs/Scientific Foundation Model.html">Scientific Foundation Model</a></h3>
-                <p class="text-muted smaller-text">Published: February 26, 2025</p>
-                <hr>
-            </div>
-
-            <!-- Example Blog Item -->
-            <div class="blog-item" data-date="2024-08-07">
-                <h3><a href="blogs/The Impact of Language Models on Engineering: A Technical Analysis">The Impact of Language Models on Engineering: A Technical Analysis</a></h3>
-                <p class="text-muted smaller-text">Published: November 3, 2024</p>
-                <hr>
-            </div>
-            
-            <div class="blog-item" data-date="2024-08-07">
-                <h3><a href="blogs/What is a Digital Twin.html">What is a Digital Twin?</a></h3>
-                <p class="text-muted smaller-text">Published: August 7, 2024</p>
-                <hr>
-            </div>
-            
-            <div class="blog-item" data-date="2023-08-28">
-                <h3><a href="blogs/Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed.html">Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</a></h3>
-                <p class="text-muted smaller-text">Published: August 28, 2023</p>
-                <hr>
-            </div>
-        
-            <div class="blog-item" data-date="2023-08-21">
-                <h3><a href="blogs//Harnessing the Potential of Digital Twins with Machine Learning: Deciphering the Capabilities for the Future.html">Harnessing the Potential of Digital Twins with Machine Learning: Deciphering the Capabilities for the Future</a></h3>
-                <p class="text-muted smaller-text">Published: August 21, 2023</p>
-                <hr>
-            </div>
-        
-            <div class="blog-item" data-date="2023-08-20">
-                <h3><a href="blogs/Leveraging Large Language Models and Prompt Engineering for Engineering Design.html">Leveraging Large Language Models and Prompt Engineering for Engineering Design</a></h3>
-                <p class="text-muted smaller-text">Published: August 20, 2023</p>
-                <hr>
-            </div>
-
-        </div>
+      </div>
     </div>
-</section>
+  </nav>
 
-<footer class="footer text-center mt-4">
-    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
-</footer>
+  <!-- Intro / header -->
+  <header class="page-intro">
+    <div class="container">
+      <div class="intro-card glass glass-strong rounded-4 p-4">
+        <h1 class="title mb-1">Blog</h1>
+        <p class="subtitle">Notes on machine learning, digital twins, optimization, and engineering systems.</p>
+      </div>
+    </div>
+  </header>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    let filters = document.querySelectorAll(".list-inline a");
-    
-    filters.forEach(filter => {
-        filter.addEventListener("click", function(event) {
-            event.preventDefault();
+  <!-- Filters -->
+  <section class="pt-3">
+    <div class="container">
+      <div class="d-flex justify-content-center filter-bar">
+        <button class="btn filter-btn active" data-sort="newest" type="button" aria-pressed="true">
+          <i class="fas fa-sort-amount-down me-1"></i> Newest to Oldest
+        </button>
+        <button class="btn filter-btn" data-sort="oldest" type="button" aria-pressed="false">
+          <i class="fas fa-sort-amount-up me-1"></i> Oldest to Newest
+        </button>
+      </div>
+    </div>
+  </section>
 
-            // Change active class for filters
-            filters.forEach(f => f.classList.remove("font-weight-bold"));
-            filters.forEach(f => f.classList.add("text-muted"));
-            this.classList.remove("text-muted");
-            this.classList.add("font-weight-bold");
-            
-            // Sorting logic based on the selected filter
-            let filterType = this.getAttribute("href").substring(1);
-            sortBlogs(filterType);
+  <!-- Blog list -->
+  <main class="py-4">
+    <div class="container">
+      <div id="blogList" class="row row-cols-1 row-cols-md-2 g-4">
+
+        <!-- Blog card template (repeat) -->
+        <div class="col" data-date="2025-02-26">
+          <article class="glass glass-card blog-card h-100">
+            <h3 class="post-title">
+              <a href="blogs/Scientific Foundation Model.html">Scientific Foundation Model</a>
+            </h3>
+            <div class="meta">Published: February 26, 2025</div>
+          </article>
+        </div>
+
+        <div class="col" data-date="2024-11-03">
+          <article class="glass glass-card blog-card h-100">
+            <h3 class="post-title">
+              <a href="blogs/The Impact of Language Models on Engineering: A Technical Analysis.html">
+                The Impact of Language Models on Engineering: A Technical Analysis
+              </a>
+            </h3>
+            <div class="meta">Published: November 3, 2024</div>
+          </article>
+        </div>
+
+        <div class="col" data-date="2024-08-07">
+          <article class="glass glass-card blog-card h-100">
+            <h3 class="post-title">
+              <a href="blogs/What is a Digital Twin.html">What is a Digital Twin?</a>
+            </h3>
+            <div class="meta">Published: August 7, 2024</div>
+          </article>
+        </div>
+
+        <div class="col" data-date="2023-08-28">
+          <article class="glass glass-card blog-card h-100">
+            <h3 class="post-title">
+              <a href="blogs/Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed.html">
+                Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed
+              </a>
+            </h3>
+            <div class="meta">Published: August 28, 2023</div>
+          </article>
+        </div>
+
+        <div class="col" data-date="2023-08-21">
+          <article class="glass glass-card blog-card h-100">
+            <h3 class="post-title">
+              <a href="blogs/Harnessing the Potential of Digital Twins with Machine Learning: Deciphering the Capabilities for the Future.html">
+                Harnessing the Potential of Digital Twins with Machine Learning: Deciphering the Capabilities for the Future
+              </a>
+            </h3>
+            <div class="meta">Published: August 21, 2023</div>
+          </article>
+        </div>
+
+        <div class="col" data-date="2023-08-20">
+          <article class="glass glass-card blog-card h-100">
+            <h3 class="post-title">
+              <a href="blogs/Leveraging Large Language Models and Prompt Engineering for Engineering Design.html">
+                Leveraging Large Language Models and Prompt Engineering for Engineering Design
+              </a>
+            </h3>
+            <div class="meta">Published: August 20, 2023</div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="foot" role="contentinfo" aria-label="Profile links">
+    <div class="container text-center">
+      <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+        <i class="fab fa-google fa-lg" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/Vispikarkaria" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+      </a>
+      <a href="https://x.com/VispiKarkaria3" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:vispikarkaria127@gmail.com" aria-label="Email Vispi">
+        <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Sorting logic (vanilla JS) -->
+  <script>
+    (function(){
+      const list = document.getElementById('blogList');
+      const cards = Array.from(list.querySelectorAll('.col'));
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      function sort(direction) {
+        const sorted = cards.slice().sort((a, b) => {
+          const da = a.getAttribute('data-date');
+          const db = b.getAttribute('data-date');
+          return (direction === 'newest') ? db.localeCompare(da) : da.localeCompare(db);
         });
-    });
-    
-    function sortBlogs(type) {
-        let container = document.querySelector(".blog-list");
-        let items = Array.from(container.children);
-        
-        items.sort((a, b) => {
-            if (type === "newest") {
-                return b.getAttribute("data-date").localeCompare(a.getAttribute("data-date"));
-            } else {
-                return a.getAttribute("data-date").localeCompare(b.getAttribute("data-date"));
-            }
+        sorted.forEach(el => list.appendChild(el));
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const dir = btn.getAttribute('data-sort');
+          sort(dir);
         });
-        
-        items.forEach(item => container.appendChild(item));
-    }
-});
-</script>
+      });
+
+      // initial sort (newest first)
+      sort('newest');
+    })();
+  </script>
 </body>
 </html>
