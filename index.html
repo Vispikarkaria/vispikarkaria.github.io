@@ -1,185 +1,231 @@
 <!DOCTYPE html>
-<html lang="en" id="page-top">
+<html lang="en" id="page-top" data-theme="auto">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
   <meta name="author" content="Vispi Nevile Karkaria" />
   <title>Vispi Nevile Karkaria</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-  <!-- Icons & Fonts -->
-  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap" rel="stylesheet" />
-  <!-- Bootstrap (single include) -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous" defer></script>
+
+  <!-- Bootstrap 5 (single include) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Theming + Aesthetic Styles -->
   <style>
     :root {
-      --bg: #222;
-      --text: #fff;
-      --muted: rgba(255,255,255,0.7);
-      --link: #cfd8dc;
-      --link-hover: #ffffff;
-      --accent: lightblue;
+      --bg: #0b0c10;
+      --bg-elev: #121318;
+      --text: #eaf0f2;
+      --muted: #b6c1c9;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --accent: #8bd3ff;
+      --link: #a6dbff;
+      --link-hover: #e0f4ff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --hero-overlay: radial-gradient(1200px 600px at 50% 0%, rgba(139,211,255,0.15), transparent 60%);
     }
+    /* Light theme */
+    :root[data-theme="light"] {
+      --bg: #f7fafc;
+      --bg-elev: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --card: rgba(17,24,39,0.03);
+      --border: rgba(17,24,39,0.08);
+      --accent: #0ea5e9;
+      --link: #0ea5e9;
+      --link-hover: #0369a1;
+      --shadow: 0 10px 30px rgba(2,6,23,0.06);
+      --hero-overlay: radial-gradient(1200px 600px at 50% 0%, rgba(14,165,233,0.12), transparent 60%);
+    }
+
+    /* Respect system preference on first load when data-theme="auto" */
+    @media (prefers-color-scheme: light) {
+      :root[data-theme="auto"] {
+        --bg: #f7fafc;
+        --bg-elev: #ffffff;
+        --text: #1f2937;
+        --muted: #4b5563;
+        --card: rgba(17,24,39,0.03);
+        --border: rgba(17,24,39,0.08);
+        --accent: #0ea5e9;
+        --link: #0ea5e9;
+        --link-hover: #0369a1;
+        --shadow: 0 10px 30px rgba(2,6,23,0.06);
+        --hero-overlay: radial-gradient(1200px 600px at 50% 0%, rgba(14,165,233,0.12), transparent 60%);
+      }
+    }
+
     html, body {
       height: 100%;
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background-color: var(--bg);
-      padding-bottom: 80px; /* prevent footer overlap */
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     /* Navbar */
     .navbar {
-      color: grey;
-      background-color: var(--bg);
-      z-index: 1030;
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      background: color-mix(in oklab, var(--bg), transparent 35%);
+      border-bottom: 1px solid var(--border);
     }
-    .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
-      color: rgba(255,255,255,.85);
+    .navbar-brand, .navbar-nav .nav-link {
+      color: var(--text) !important;
     }
-    .navbar-toggler {
-      background: rgba(255,255,255,.5);
+    .navbar-nav .nav-link:hover {
+      color: var(--link-hover) !important;
     }
-    .navbar-nav .nav-item .nav-link {
-      color: rgba(255,255,255,.8);
+
+    /* Theme toggle */
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--text);
     }
-    .navbar-nav .nav-item .nav-link:hover {
-      color: rgba(255,255,255,.95);
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     /* Hero */
     .masthead {
-      background: url('78759.jpg') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
+      position: relative;
+      min-height: 80vh;
+      display: grid;
+      place-items: center;
       text-align: center;
-      color: #fff;
-      padding-top: 70px;
-      display: flex;
-      align-items: center;
+      background: url('78759.jpg') center/cover no-repeat;
+      isolation: isolate;
+    }
+    .masthead::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg) 0%, transparent 40%) , var(--hero-overlay);
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding-top: 4rem;
     }
     .masthead h1 {
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      letter-spacing: .1rem;
-      color: #fff; /* ensure light text on dark image */
+      font-weight: 800;
+      letter-spacing: .04em;
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      margin-bottom: .75rem;
     }
     .masthead h2 {
-      font-weight: 200;
-      font-size: 1.2rem;
-      letter-spacing: .1rem;
-      padding-bottom: 2rem;
-      color: #fff;
+      font-weight: 400;
+      font-size: clamp(1rem, 1vw + .75rem, 1.35rem);
+      color: var(--muted);
+      margin-bottom: 1.25rem;
     }
+    .scroll-down {
+      color: var(--link);
+    }
+    .scroll-down:hover { color: var(--link-hover); }
 
     /* Sections */
-    .about-section {
-      background-color: var(--bg);
-      padding: 3rem 1.5rem;
+    section.section {
+      padding: 4rem 0;
     }
-    .about-section h2 {
-      color: #fff;
-      font-weight: 700;
-      letter-spacing: .1rem;
+    .section-title {
+      font-weight: 800;
+      letter-spacing: .03em;
+      margin-bottom: 1.75rem;
     }
 
-    /* Cards / items */
-    .edu-item {
-      border: 1px solid #ffffff; /* White border */
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      background-color: transparent;
+    /* Cards */
+    .card-surface {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
     }
-    .edu-item h3,
-    .edu-item h4 { /* fixed stray 'a' that broke CSS previously */
-      margin-bottom: .5rem;
+    .card-surface .card-body {
+      background: linear-gradient(180deg, transparent, transparent 60%, color-mix(in oklab, var(--accent), transparent 90%) 100%);
     }
-    .edu-item h3 {
-      font-size: 1.2rem;
+    .badge-accent {
+      background: color-mix(in oklab, var(--accent), transparent 75%);
+      color: var(--link-hover);
     }
-    .smaller-text {
-      font-size: 0.95rem;
+    a.btn-outline-info {
+      --bs-btn-color: var(--accent);
+      --bs-btn-border-color: var(--accent);
+      --bs-btn-hover-bg: var(--accent);
+      --bs-btn-hover-border-color: var(--accent);
+      --bs-btn-hover-color: #051923;
     }
 
     /* Sticky left column */
     #cv-summary {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       position: sticky;
-      top: 70px;
-      z-index: 100;
-      padding: 20px;
-      align-items: center;
-      background: var(--bg);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 10px;
+      top: 92px;
     }
-    .divider {
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background-color: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
+    #avatar {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
     }
 
-    /* Footer */
-    .footer {
-      width: 100%;
-      text-align: center;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      background-color: var(--bg);
-      padding: 1rem 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
+    /* Footer (non-overlapping) */
+    footer.footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--muted);
     }
-    .footer a {
-      color: var(--link);
-      margin: 0 1rem;
-    }
-    .footer a:hover {
-      color: var(--link-hover);
-      text-decoration: none;
-    }
-
-    /* Link contrast globally in navbar/footer context */
-    .navbar a, .footer a {
-      color: var(--link);
-    }
+    footer.footer a { color: var(--link); }
+    footer.footer a:hover { color: var(--link-hover); }
 
     /* Utilities */
-    .btn-outline-info {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .btn-outline-info:hover {
-      background-color: var(--accent);
-      color: #000;
-    }
+    .text-muted-strong { color: var(--muted) !important; }
+    .small-muted { color: var(--muted); font-size: .95rem; }
   </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">HOME</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+      <a class="navbar-brand fw-bold" href="#page-top">VNK</a>
+
+      <button class="btn btn-sm theme-toggle me-2 d-lg-none" id="themeBtnMobile" aria-label="Toggle theme">
+        <i class="fas fa-adjust"></i>
       </button>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars text-muted-strong"></i></span>
+      </button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pubs">Publications</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blog.html" target="_blank" rel="noopener noreferrer">Blog</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#foot">Links</a></li>
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pubs">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html" target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#foot">Links</a></li>
+          <li class="nav-item ms-lg-3 d-none d-lg-block">
+            <button class="btn btn-sm theme-toggle" id="themeBtn" aria-label="Toggle theme">
+              <i class="fas fa-adjust"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -187,85 +233,81 @@
 
   <!-- Hero -->
   <header class="masthead">
-    <div class="container d-flex h-100 align-items-center" id="header-container">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0">Vispi Nevile Karkaria</h1>
-        <h2 class="text-light mx-auto mt-4 mb-4">Machine Learning, Digital Twins, Time-Series Analysis, Optimization</h2>
-        <a class="btn btn-link js-scroll-trigger" href="#about" aria-label="Scroll to About"><i class="fa fa-angle-down"></i></a>
-      </div>
+    <div class="container hero-inner">
+      <h1 class="mb-1">Vispi Nevile Karkaria</h1>
+      <h2 class="mb-3">Machine Learning · Digital Twins · Time-Series · Optimization</h2>
+      <a class="scroll-down" href="#about" aria-label="Scroll to About"><i class="fa fa-angle-down fa-2x"></i></a>
     </div>
   </header>
 
   <!-- About -->
-  <section class="about-section text-center" id="about">
+  <section class="section" id="about">
     <div class="container">
-      <div class="row justify-content-center position-relative">
-        <div class="col-lg-4 my-0">
-          <div class="sticky-top text-center" id="cv-summary">
-            <img class="rounded-circle img-fluid" id="avatar" src="Personal_Photo.jpeg"
-                 alt="Portrait of Vispi Nevile Karkaria" width="240" height="240" />
-            <h2 class="mt-3">About Vispi</h2>
-            <div class="men">
-              <div>
-                <a class="btn btn-sm btn-outline-info men-but" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button">Go to…</a>
-                <div class="collapse text-uppercase mt-2" id="collapse-1">
-                  <p class="mb-2"><a class="men-link js-scroll-trigger" href="#projects">Projects</a></p>
-                  <p class="mb-2"><a class="men-link js-scroll-trigger" href="#education">Education</a></p>
-                  <p class="mb-2"><a class="men-link js-scroll-trigger" href="#pubs">Publications</a></p>
-                  <p class="mb-0"><a class="men-link js-scroll-trigger" href="#confPapers">Conference Papers</a></p>
+      <div class="row g-4">
+        <aside class="col-lg-4">
+          <div id="cv-summary" class="p-4 card-surface">
+            <img class="rounded-circle img-fluid mb-3" id="avatar" src="Personal_Photo.jpeg" alt="Portrait of Vispi Nevile Karkaria" />
+            <h2 class="h4 fw-bold mb-3">About Vispi</h2>
+
+            <div class="d-grid gap-2">
+              <a class="btn btn-outline-info btn-sm" data-bs-toggle="collapse" href="#quickLinks" role="button" aria-expanded="false" aria-controls="quickLinks">
+                Quick Links
+              </a>
+              <div class="collapse" id="quickLinks">
+                <div class="pt-2 small">
+                  <p class="mb-2"><a class="text-decoration-none" href="#projects">Projects</a></p>
+                  <p class="mb-2"><a class="text-decoration-none" href="#education">Education</a></p>
+                  <p class="mb-2"><a class="text-decoration-none" href="#pubs">Publications</a></p>
+                  <p class="mb-0"><a class="text-decoration-none" href="#confPapers">Conference Papers</a></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="divider d-none d-lg-block"></div>
-        </div>
+        </aside>
 
-        <div class="col-lg-8 mx-auto" id="cv-main">
-          <p class="text-justify men-par">
-            As a Ph.D. student at Northwestern University, my focus is centered on the development and implementation of machine learning algorithms for Digital Twins.
-            I'm deeply immersed in projects encompassing various fields such as time-series analysis, language models, deep learning, uncertainty quantification, and optimization.
-            My proficiency lies in creating machine learning models specifically designed for time-series analysis and building optimization algorithms for real-time decision making.
-            <br /><br />
-            My research is predominantly oriented toward the creation and utilization of these algorithms to construct digital twin systems.
-            The concept of a digital twin refers to the creation of a digital replica of a physical system.
-            This virtual model is capable of learning from its real-life counterpart in real time, facilitating instantaneous decision making by providing actionable feedback to the physical system.
-            The harmony between the physical and digital systems encapsulates the innovative and dynamic nature of my research.
-          </p>
+        <div class="col-lg-8">
+          <div class="p-4 card-surface">
+            <p class="small-muted mb-0">
+              As a Ph.D. student at Northwestern University, my focus is centered on the development and implementation of machine learning algorithms for Digital Twins.
+              I'm immersed in time-series analysis, language models, deep learning, uncertainty quantification, and optimization—building models tailored for time-series and algorithms for real-time decision making.
+            </p>
+            <p class="small-muted mt-3 mb-0">
+              My research aims to create digital replicas of physical systems that learn from real-world counterparts in real time and provide actionable feedback—making decisions instantaneously and robustly.
+            </p>
+          </div>
 
           <!-- Education -->
-          <section id="education" class="about-section text-center" style="background-color: #222;">
-            <h2 class="mb-4">Education</h2>
-            <div class="row cv-left justify-content-center text-left no-gutters" id="edu">
-              <div class="card-deck">
-                <div class="card">
-                  <div class="card-body text-left" style="background-color: #222;">
-                    <h6>Northwestern University, Evanston, Illinois, USA</h6>
-                    <div class="small text-white-50">
-                      Ph.D. Specialization in Machine Learning &amp; Data Science Algorithms<br />
-                      Sep 2021 – May 2026<br />
-                      GPA: 3.88/4.00<br />
-                      Advisor: Prof. Wei Chen
-                    </div>
+          <section id="education" class="section pt-4">
+            <h2 class="section-title h4">Education</h2>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="p-3 card-surface h-100">
+                  <h6 class="fw-semibold mb-2">Northwestern University</h6>
+                  <div class="small-muted">
+                    Ph.D., ML &amp; Data Science Algorithms<br>
+                    Sep 2021 – May 2026<br>
+                    GPA: 3.88/4.00<br>
+                    Advisor: Prof. Wei Chen
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-body text-left" style="background-color: #222;">
-                    <h6>Northwestern University, Evanston, Illinois, USA</h6>
-                    <div class="small text-white-50">
-                      Master’s-Level Graduate Certificate in Predictive Science &amp; Machine Learning<br />
-                      Sep 2022 – Sep 2024<br />
-                      GPA: 4.00/4.00
-                    </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-3 card-surface h-100">
+                  <h6 class="fw-semibold mb-2">Northwestern University</h6>
+                  <div class="small-muted">
+                    Grad Certificate: Predictive Science &amp; ML<br>
+                    Sep 2022 – Sep 2024<br>
+                    GPA: 4.00/4.00
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-body text-left" style="background-color: #222;">
-                    <h6>College of Engineering, Pune (COEP), Pune, India</h6>
-                    <div class="small text-white-50">
-                      Bachelor of Engineering (Mechanical)<br />
-                      Jul 2018 – Jul 2021<br />
-                      GPA: 9.84/10.00
-                    </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-3 card-surface h-100">
+                  <h6 class="fw-semibold mb-2">COEP, Pune</h6>
+                  <div class="small-muted">
+                    B.E. (Mechanical)<br>
+                    Jul 2018 – Jul 2021<br>
+                    GPA: 9.84/10.00
                   </div>
                 </div>
               </div>
@@ -273,246 +315,186 @@
           </section>
 
           <!-- Projects -->
-          <section class="about-section text-center smaller-text" id="projects">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 mx-auto">
-                  <h2 class="mb-4">Projects</h2>
+          <section class="section" id="projects">
+            <h2 class="section-title h4">Projects</h2>
 
-                  <!-- NEW: RAG-Based AI Pharmacist Assistant -->
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>RAG-Based AI Pharmacist Assistant</h3>
-                      <p><b>2023–Present</b></p>
-                      <p>Algorithms: RAG, LLMs, Tool-Use, Safety</p>
-                      <ul>
-                        <li>Built an end-to-end RAG assistant for medication counseling and interaction checks (HF encoder + FAISS + cross-encoder reranker), achieving 92% top-3 retrieval recall, 87% citation-backed answer rate, and p95 latency of 1.4s on a 1M-document index.</li>
-                        <li>Added guardrails (PII filters, dose-range rules, red-team prompts) and uncertainty-aware abstention, reducing hallucinations by 38% and wrong-dose suggestions by 61% in a blinded evaluation; deployed as a Docker microservice with MLflow tracking.</li>
-                      </ul>
-                      <p>
-                        <a href="https://github.com/Vispikarkaria/AI-Pharmacist" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
-                          View on GitHub
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Multi-Agent LLM System for Automated Optimization Problem Solving</h3>
-                      <p><b>2023–Present</b></p>
-                      <p>Algorithms: GPT, Agentic AI, RAG-based Systems, Language Models</p>
-                      <ul>
-                        <li>Built an API where users submit optimization problems; the system selects and applies suitable solvers via RAG.</li>
-                        <li>Two-stage pipeline: method selection with RAG, then solver invocation for efficient, accurate solutions.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Attention-Based Spatial Temporal Neural Operator for Spatio-Temporal Learning</h3>
-                      <p><b>2024–Present</b></p>
-                      <p>Algorithms: Federated Learning, Neural Operator, Attention, Foundational Model</p>
-                      <ul>
-                        <li>Developed an Attention-based Neural Operator improving neural-operator accuracy by 25% with temporal-spatial analysis.</li>
-                        <li>Adapted into a foundational model with federated learning for secure, scalable cross-application transfer.</li>
-                      </ul>
-                      <p>
-                        <a href="https://github.com/Vispikarkaria/ASNO" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
-                          View on GitHub
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Reinforcement Learning-Transformer Tire Resource Allocation</h3>
-                      <p><b>2023–Present</b></p>
-                      <p>Algorithms: Transformers, Sequential Learning, Reinforcement Learning, Interpretable ML</p>
-                      <ul>
-                        <li>Boosted real-time tire lifespan prediction accuracy by 50% using an interpretable Temporal Fusion Transformer.</li>
-                        <li>Designed an RL framework that extended tire health by up to 95% with transformer-driven decisions.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Bayesian Optimization for Time Series Process Optimization</h3>
-                      <p><b>2022–2024</b></p>
-                      <p>Algorithms: Deep Learning, Big Data, Transformers, Bayesian Optimization</p>
-                      <ul>
-                        <li>Reduced prediction time in Additive Manufacturing with a transformer-based surrogate model.</li>
-                        <li>Quantified predictive uncertainty and created BOTS (Bayesian Optimization of Time Series) for time-series optimization.</li>
-                      </ul>
-                      <p>
-                        <a href="https://github.com/Vispikarkaria/Bayesian-Optimization-for-Time-Series-Process-Optimization-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
-                          View on GitHub
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Latent-Variable Constrained Bayesian Optimization (LV-CBO)</h3>
-                      <p><b>2022–2023</b> • Collaboration with Hyundai Motors</p>
-                      <p>Algorithms: Mixed Variable Optimization, Gaussian Processes, PyTorch</p>
-                      <ul>
-                        <li>Pioneered LV-CBO to seamlessly handle continuous and categorical variables via latent variables.</li>
-                        <li>Drove a 20% rise in operational efficiency and a 15% cost reduction on partner use cases.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Development of a Tire Lifespan Predictive Algorithm via Random Forest</h3>
-                      <p><b>2021–2023</b></p>
-                      <p>Algorithms: Random Forest, Gaussian Process Models, Data Balancing Methods</p>
-                      <ul>
-                        <li>Built a robust ML pipeline predicting tire lifespan with Random Forest.</li>
-                        <li>Introduced VR-SMOTE for data balancing, outperforming standard methods.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item">
-                    <div class="card-body">
-                      <h3>Designing LSTM Model for Streamlining Additive Manufacturing Process</h3>
-                      <p><b>2022–2023</b></p>
-                      <p>Algorithms: LSTM, Deep Learning, Big Data</p>
-                      <ul>
-                        <li>Designed an LSTM surrogate for AM to significantly cut prediction latency.</li>
-                        <li>Built big-data infrastructure to manage high-volume process data.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="card edu-item" style="border-bottom: 1px solid #ccc;">
-                    <div class="card-body">
-                      <h3>Formulation of Machine Learning Model to Enhance the Lifespan of Super-Capacitors</h3>
-                      <p><b>2020–2023</b></p>
-                      <p>Algorithms: Deep Learning, Gaussian Processes, PyTorch</p>
-                      <ul>
-                        <li>Predicted current output across configurations with deep learning models.</li>
-                        <li>Used gradient-based optimization to identify efficient super-capacitor designs.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                </div>
+            <!-- Example card -->
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Multi-Agent LLM System for Automated Optimization Problem Solving</h3>
+                <span class="badge rounded-pill badge-accent">2023–Present</span>
               </div>
+              <p class="mb-2 small-muted">Algorithms: GPT, Agentic AI, RAG-based Systems, Language Models</p>
+              <ul class="mb-2">
+                <li>Built an API where users submit optimization problems; the system selects and applies suitable solvers via RAG.</li>
+                <li>Two-stage pipeline: method selection with RAG, then solver invocation for efficient, accurate solutions.</li>
+              </ul>
+            </div>
+
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Attention-Based Spatial Temporal Neural Operator for Spatio-Temporal Learning</h3>
+                <span class="badge rounded-pill badge-accent">2024–Present</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: Federated Learning, Neural Operator, Attention, Foundational Model</p>
+              <ul class="mb-2">
+                <li>Developed an Attention-based Neural Operator improving neural-operator accuracy by 25% with temporal-spatial analysis.</li>
+                <li>Adapted into a foundational model with federated learning for secure, scalable transfer.</li>
+              </ul>
+              <p class="mb-0"><a href="https://github.com/Vispikarkaria/ASNO" class="btn btn-sm btn-outline-info" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+            </div>
+
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Reinforcement Learning-Transformer Tire Resource Allocation</h3>
+                <span class="badge rounded-pill badge-accent">2023–Present</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: Transformers, Sequential Learning, Reinforcement Learning, Interpretable ML</p>
+              <ul class="mb-0">
+                <li>Boosted real-time tire lifespan prediction accuracy by 50% using an interpretable Temporal Fusion Transformer.</li>
+                <li>Designed an RL framework that extended tire health by up to 95% with transformer-driven decisions.</li>
+              </ul>
+            </div>
+
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Bayesian Optimization for Time Series Process Optimization</h3>
+                <span class="badge rounded-pill badge-accent">2022–2024</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: Deep Learning, Big Data, Transformers, Bayesian Optimization</p>
+              <ul class="mb-2">
+                <li>Reduced prediction time in Additive Manufacturing with a transformer-based surrogate model.</li>
+                <li>Quantified predictive uncertainty and created BOTS for time-series optimization.</li>
+              </ul>
+              <p class="mb-0"><a href="https://github.com/Vispikarkaria/Bayesian-Optimization-for-Time-Series-Process-Optimization-" class="btn btn-sm btn-outline-info" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+            </div>
+
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Latent-Variable Constrained Bayesian Optimization (LV-CBO)</h3>
+                <span class="badge rounded-pill badge-accent">2022–2023</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: Mixed Variable Optimization, Gaussian Processes, PyTorch</p>
+              <ul class="mb-0">
+                <li>Pioneered LV-CBO to handle continuous and categorical variables via latent variables.</li>
+                <li>Drove a 20% rise in operational efficiency and a 15% cost reduction on partner use cases.</li>
+              </ul>
+            </div>
+
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Development of a Tire Lifespan Predictive Algorithm via Random Forest</h3>
+                <span class="badge rounded-pill badge-accent">2021–2023</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: Random Forest, Gaussian Process Models, Data Balancing Methods</p>
+              <ul class="mb-0">
+                <li>Built a robust ML pipeline predicting tire lifespan with Random Forest.</li>
+                <li>Introduced VR-SMOTE for data balancing, outperforming standard methods.</li>
+              </ul>
+            </div>
+
+            <div class="p-4 mb-3 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Designing LSTM Model for Streamlining Additive Manufacturing Process</h3>
+                <span class="badge rounded-pill badge-accent">2022–2023</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: LSTM, Deep Learning, Big Data</p>
+              <ul class="mb-0">
+                <li>Designed an LSTM surrogate for AM to significantly cut prediction latency.</li>
+                <li>Built big-data infrastructure to manage high-volume process data.</li>
+              </ul>
+            </div>
+
+            <div class="p-4 card-surface">
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="h5 mb-2">Machine Learning to Enhance the Lifespan of Super-Capacitors</h3>
+                <span class="badge rounded-pill badge-accent">2020–2023</span>
+              </div>
+              <p class="mb-2 small-muted">Algorithms: Deep Learning, Gaussian Processes, PyTorch</p>
+              <ul class="mb-0">
+                <li>Predicted current output across configurations with deep learning models.</li>
+                <li>Used gradient-based optimization to identify efficient super-capacitor designs.</li>
+              </ul>
             </div>
           </section>
 
           <!-- Publications -->
-          <section class="about-section text-center smaller-text" id="pubs">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 mx-auto">
-                  <h2 class="mb-4">Publications</h2>
+          <section class="section" id="pubs">
+            <h2 class="section-title h4">Publications</h2>
 
-                  <div class="edu-item">
-                    <h3><b>An optimization-centric review on integrating artificial intelligence and digital twin technologies in manufacturing</b></h3>
-                    <p><b>Authors:</b> <span style="font-weight:bold;">Karkaria, Vispi</span>, Ying-Kuan Tsai, Yi-Ping Chen, and Wei Chen.</p>
-                    <p>Engineering Optimization, 2024, pp. 1-47. <a href="https://www.tandfonline.com/doi/full/10.1080/0305215X.2024.2434201" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">An optimization-centric review on integrating artificial intelligence and digital twin technologies in manufacturing</h3>
+              <p class="small-muted mb-1"><b>Authors:</b> <span class="fw-semibold">Karkaria, Vispi</span>, Ying-Kuan Tsai, Yi-Ping Chen, and Wei Chen.</p>
+              <p class="small-muted mb-0">Engineering Optimization, 2024. <a href="https://www.tandfonline.com/doi/full/10.1080/0305215X.2024.2434201" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>Towards a Digital Twin Framework in Additive Manufacturing: Machine Learning and Bayesian Optimization for Time Series Process Optimization</b></h3>
-                    <p><b>Authors:</b> <span style="font-weight:bold;">Karkaria, V.</span>, Goeckner, A., Zha, R., Chen, J., Zhang, J., Zhu, Q., Cao, J., Gao, R. X., Chen, W.</p>
-                    <p>Journal of Manufacturing Systems, 2024. <a href="https://www.sciencedirect.com/science/article/abs/pii/S027861252400089X" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">Towards a Digital Twin Framework in Additive Manufacturing: Machine Learning and Bayesian Optimization for Time Series Process Optimization</h3>
+              <p class="small-muted mb-1"><b>Authors:</b> <span class="fw-semibold">Karkaria, V.</span>, Goeckner, A., Zha, R., Chen, J., Zhang, J., Zhu, Q., Cao, J., Gao, R. X., Chen, W.</p>
+              <p class="small-muted mb-0">Journal of Manufacturing Systems, 2024. <a href="https://www.sciencedirect.com/science/article/abs/pii/S027861252400089X" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>A Digital Twin Framework Utilizing Machine Learning for Robust Predictive Maintenance: Enhancing Tire Health Monitoring</b></h3>
-                    <p><b>Authors:</b> <span style="font-weight:bold;">Karkaria, V.</span>, Chen, J., Luey, C., Siuta, C., Lim, D., Radulescu, R., Chen, W.</p>
-                    <p>arXiv preprint arXiv:2408.06220, 2024. <a href="https://arxiv.org/abs/2408.06220" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">A Digital Twin Framework Utilizing Machine Learning for Robust Predictive Maintenance: Enhancing Tire Health Monitoring</h3>
+              <p class="small-muted mb-1"><b>Authors:</b> <span class="fw-semibold">Karkaria, V.</span>, Chen, J., Luey, C., Siuta, C., Lim, D., Radulescu, R., Chen, W.</p>
+              <p class="small-muted mb-0">arXiv preprint arXiv:2408.06220, 2024. <a href="https://arxiv.org/abs/2408.06220" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>A Machine Learning–Based Tire Life Prediction Framework for Increasing Life of Commercial Vehicle Tires</b></h3>
-                    <p><b>Authors:</b> <span style="font-weight:bold;">Karkaria, V.</span>, Chen, J., Siuta, C., Lim, D., Radulescu, R., Chen, W.</p>
-                    <p>Journal of Mechanical Design, vol. 146, no. 2, 2024. <a href="https://asmedigitalcollection.asme.org/mechanicaldesign/article-abstract/146/2/020902/1169300/A-Machine-Learning-Based-Tire-Life-Prediction?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer">Paper Link</a>.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">A Machine Learning–Based Tire Life Prediction Framework for Increasing Life of Commercial Vehicle Tires</h3>
+              <p class="small-muted mb-1"><b>Authors:</b> <span class="fw-semibold">Karkaria, V.</span>, Chen, J., Siuta, C., Lim, D., Radulescu, R., Chen, W.</p>
+              <p class="small-muted mb-0">Journal of Mechanical Design, vol. 146, no. 2, 2024. <a href="https://asmedigitalcollection.asme.org/mechanicaldesign/article-abstract/146/2/020902/1169300/A-Machine-Learning-Based-Tire-Life-Prediction?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>Tire Life Assessment for Increasing Re‐Manufacturing of Commercial Vehicle Tires</b></h3>
-                    <p><b>Authors:</b> <span style="font-weight:bold;">Karkaria, V.</span>, Chen, J., Siuta, C., Lim, D., Radulescu, R., Chen, W.</p>
-                    <p>Technology Innovation for the Circular Economy: Recycling, Remanufacturing, Design, Systems Analysis and Logistics, 2024, pp. 599-612. <a href="https://onlinelibrary.wiley.com/doi/10.1002/9781394214297.ch45" target="_blank" rel="noopener noreferrer">Paper Link</a>.</p>
-                  </div>
-
-                  <div class="edu-item">
-                    <h3><b>Digital twins for the designs of systems: a perspective</b></h3>
-                    <p><b>Authors:</b> van Beek, Anton, <span style="font-weight:bold;">Vispi Nevile Karkaria</span>, and Wei Chen.</p>
-                    <p>Structural and Multidisciplinary Optimization, vol. 66, no. 3, 2023, pp. 49. <a href="https://link.springer.com/article/10.1007/s00158-023-03488-x" target="_blank" rel="noopener noreferrer">Paper Link</a>. </p>
-                  </div>
-
-                </div>
-              </div>
+            <div class="p-4 card-surface">
+              <h3 class="h6 fw-bold mb-2">Tire Life Assessment for Increasing Re-Manufacturing of Commercial Vehicle Tires</h3>
+              <p class="small-muted mb-1"><b>Authors:</b> <span class="fw-semibold">Karkaria, V.</span>, Chen, J., Siuta, C., Lim, D., Radulescu, R., Chen, W.</p>
+              <p class="small-muted mb-0">Technology Innovation for the Circular Economy, 2024. <a href="https://onlinelibrary.wiley.com/doi/10.1002/9781394214297.ch45" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
             </div>
           </section>
 
           <!-- Conference Papers -->
-          <section class="about-section text-center smaller-text" id="confPapers">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 mx-auto">
-                  <h2 class="mb-4">Conference Papers</h2>
+          <section class="section" id="confPapers">
+            <h2 class="section-title h4">Conference Papers</h2>
 
-                  <div class="edu-item">
-                    <h3><b>"A Computational Framework for Social Entrepreneurs to Determine Policies for Sustainable Development."</b></h3>
-                    <p><b>Authors:</b> Karkaria, V., Das, A. K., Yadav, A., Sharma, A., Allen, J. K., Mistree, F.</p>
-                    <p>Proceedings of the ASME 2021 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference. Volume 3B: 47th Design Automation Conference (DAC). Virtual, Online. August 17–19, 2021. V03BT03A019. ASME. <a href="https://doi.org/10.1115/DETC2021-70827" target="_blank" rel="noopener noreferrer">https://doi.org/10.1115/DETC2021-70827</a>.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">A Computational Framework for Social Entrepreneurs to Determine Policies for Sustainable Development.</h3>
+              <p class="small-muted mb-0">ASME IDETC/CIE 2021, V03BT03A019. <a href="https://doi.org/10.1115/DETC2021-70827" target="_blank" rel="noopener noreferrer">doi:10.1115/DETC2021-70827</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>"Investigation of substitute jar materials for Laboratory-grade ball milling machine to process electrode materials for energy storage devices"</b></h3>
-                    <p><b>Authors:</b> Shinde, S., Momin, T., Karkaria, V. N., Karandikar, P. B.</p>
-                    <p>IOP Conference Series, Material Science and Engineering, pp. 12018, vol. 1206, <a href="https://doi.org/10.1088/1757-899x/1206/1/012018" target="_blank" rel="noopener noreferrer">doi:10.1088/1757-899x/1206/1/012018</a>.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">Investigation of substitute jar materials for ball milling to process electrode materials</h3>
+              <p class="small-muted mb-0">IOP MSE 1206, 012018. <a href="https://doi.org/10.1088/1757-899x/1206/1/012018" target="_blank" rel="noopener noreferrer">doi:10.1088/1757-899x/1206/1/012018</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>"Electrode electrolyte compatibility for superior performance of super-capacitor"</b></h3>
-                    <p><b>Authors:</b> Godse, L. S., Karkaria, V. N., Bhalerao, M. J., Khatua, S., Karandikar, P. B.</p>
-                    <p>International Conference on Power Electronics Applications and Technology in Present Energy Scenario, PETPES 2019 – Proceedings, Institute of Electrical and Electronics Engineers Inc, pp. 1-5, <a href="https://doi.org/10.1109/PETPES47060.2019.9003864" target="_blank" rel="noopener noreferrer">doi:10.1109/PETPES47060.2019.9003864</a>.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">Electrode electrolyte compatibility for superior performance of super-capacitor</h3>
+              <p class="small-muted mb-0">IEEE PETPES 2019. <a href="https://doi.org/10.1109/PETPES47060.2019.9003864" target="_blank" rel="noopener noreferrer">doi:10.1109/PETPES47060.2019.9003864</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>"Sizing the connectors for super-capacitors"</b></h3>
-                    <p><b>Authors:</b> Karkaria, V. N., Godse, L. S., Bhalerao, M.J., Dalal, R.</p>
-                    <p>2019, International Conference On Electrical, Communication, Electronics, Instrumentation And Computing, Kanchipuram, Tamil Nadu, India, pp. 1-7.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">Sizing the connectors for super-capacitors</h3>
+              <p class="small-muted mb-0">ICEIC, Kanchipuram, 2019.</p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>"E-rickshaw present past and future with reference to current transportation in India"</b></h3>
-                    <p><b>Authors:</b> Kokate, V. L., Bankar, D. S., Holmukhe, R. M., Karkaria, V. N., Karandikar, P. B.</p>
-                    <p>International Conference on Recent Innovations in Electrical, Electronics &amp; Communication Engineering - (ICRIEECE), volume-01(01), pp-1–15.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">E-rickshaw—present, past and future in India</h3>
+              <p class="small-muted mb-0">ICRIEECE, Vol 01(01).</p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>"Review of technologies for making electric vehicles as main mode of transport"</b></h3>
-                    <p><b>Authors:</b> Karkaria, V. N., Sarathchandran, V., Korgaonkar, P. R., Reddy, G. S. R., Mehta, S., Karandikar, P. B.</p>
-                    <p>2018, International Conference On Advances in Communication and Computing Technology, ICACCT, Institute of Electrical and Electronics Engineers Inc, pp. 142–148, <a href="https://doi.org/10.1109/ICACCT.2018.8529591" target="_blank" rel="noopener noreferrer">doi:10.1109/ICACCT.2018.8529591</a>.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">Review of technologies for making electric vehicles mainstream</h3>
+              <p class="small-muted mb-0">IEEE ICACCT 2018. <a href="https://doi.org/10.1109/ICACCT.2018.8529591" target="_blank" rel="noopener noreferrer">doi:10.1109/ICACCT.2018.8529591</a></p>
+            </div>
 
-                  <div class="edu-item">
-                    <h3><b>"Thermal dicky"</b></h3>
-                    <p><b>Authors:</b> Karkaria, V. N., Korgaonkar, P. R, Karandikar, P. B.</p>
-                    <p>2017, Conference at Institute of Engineers, Pune, Maharashtra, India, pp. 90-96.</p>
-                  </div>
+            <div class="p-4 mb-3 card-surface">
+              <h3 class="h6 fw-bold mb-2">Thermal dicky</h3>
+              <p class="small-muted mb-0">Conference at Institute of Engineers, Pune, 2017.</p>
+            </div>
 
-                  <div class="card edu-item" style="border-bottom: 1px solid #ccc;">
-                    <h3><b>"Innovative methods of ball milling to grind activated carbon as an electrode material for enhancing the performance of ultracapacitor"</b></h3>
-                    <p><b>Authors:</b> Godse, L. S., Karkaria, V., Karandikar, P. B., Kulkarni, N. R.</p>
-                    <p>International Conference on Energy, Communication, Data Analytics and Soft Computing, ICECDS 2017, pp. 2034–2041, Institute of Electrical and Electronics Engineers Inc, <a href="https://doi.org/10.1109/ICECDS.2017.8389807" target="_blank" rel="noopener noreferrer">doi:10.1109/ICECDS.2017.8389807</a>.</p>
-                  </div>
-
-                </div>
-              </div>
+            <div class="p-4 card-surface">
+              <h3 class="h6 fw-bold mb-2">Innovative methods of ball milling to grind activated carbon for ultracapacitors</h3>
+              <p class="small-muted mb-0">ICECDS 2017. <a href="https://doi.org/10.1109/ICECDS.2017.8389807" target="_blank" rel="noopener noreferrer">doi:10.1109/ICECDS.2017.8389807</a></p>
             </div>
           </section>
 
@@ -521,28 +503,38 @@
     </div>
   </section>
 
-  <!-- Footer / Links -->
-  <footer class="footer" id="foot" role="contentinfo" aria-label="Profile links">
-    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-      <i class="fab fa-google" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <i class="fab fa-linkedin" aria-hidden="true"></i>
-    </a>
-    <a href="https://github.com/Vispikarkaria" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-      <i class="fab fa-github" aria-hidden="true"></i>
-    </a>
-    <a href="https://x.com/VispiKarkaria3" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-      <i class="fab fa-twitter" aria-hidden="true"></i>
-    </a>
-    <a href="mailto:vispikarkaria127@gmail.com" aria-label="Email Vispi">
-      <i class="fas fa-envelope" aria-hidden="true"></i>
-    </a>
+  <!-- Footer -->
+  <footer class="footer py-4" id="foot" role="contentinfo" aria-label="Profile links">
+    <div class="container text-center">
+      <a class="mx-2" href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fab fa-google"></i></a>
+      <a class="mx-2" href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a class="mx-2" href="https://github.com/Vispikarkaria" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a class="mx-2" href="https://x.com/VispiKarkaria3" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+      <a class="mx-2" href="mailto:vispikarkaria127@gmail.com" aria-label="Email Vispi"><i class="fas fa-envelope"></i></a>
+    </div>
   </footer>
 
-  <!-- Scripts (Bootstrap 4.3.1 + deps) -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script>
+    // Theme persistence
+    (function() {
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if (saved) root.setAttribute('data-theme', saved);
+
+      function toggleTheme() {
+        const current = root.getAttribute('data-theme') || 'auto';
+        const next = current === 'light' ? 'dark'
+                  : current === 'dark'  ? 'light'
+                  : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light');
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      }
+
+      document.getElementById('themeBtn')?.addEventListener('click', toggleTheme);
+      document.getElementById('themeBtnMobile')?.addEventListener('click', toggleTheme);
+    })();
+  </script>
 </body>
 </html>
