@@ -257,6 +257,24 @@ a        .edu-item h3, .edu-item h4 {
                           <div class="col-lg-12 mx-auto">
                             <h2 class="mb-4">Projects</h2>
                     
+                            <div class="card edu-item">
+                                <div class="card-body">
+                                <h3>RAG-Based AI Pharmacist Assistant</h3>
+                                <p><b>2023–Present</b></p>
+                                <p>Algorithms: RAG, LLMs, Tool-Use, Safety</p>
+                                <ul>
+                                    <li>Built an end-to-end RAG assistant for medication counseling and interaction checks (HF encoder + FAISS + cross-encoder reranker), achieving 92% top-3 retrieval recall, 87% citation-backed answer rate, and p95 latency of 1.4s on a 1M-document index.</li>
+                                    <li>Added guardrails (PII filters, dose-range rules, red-team prompts) and uncertainty-aware abstention, reducing hallucinations by 38% and wrong-dose suggestions by 61% in a blinded evaluation; deployed as a Docker microservice with MLflow tracking.</li>
+                                </ul>
+                                <p>
+                                    <a href="https://github.com/Vispikarkaria/AI-Pharmacist" target="_blank" class="btn btn-sm btn-outline-info">
+                                    View on GitHub
+                                    </a>
+                                </p>
+                                </div>
+                            </div>
+                              
+                            
                             <!-- New projects from resume -->
                             <div class="card edu-item">
                               <div class="card-body">
