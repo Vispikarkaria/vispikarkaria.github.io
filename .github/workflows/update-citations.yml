@@ -1,0 +1,49 @@
+name: Update Citation Count
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch citation count from Google Scholar
+        run: |
+          CITATIONS=$(curl -s "https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" \
+            -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
+            | grep -oP 'Cited by.*?(\d+)' | head -1 | grep -oP '\d+' | tail -1)
+
+          if [ -z "$CITATIONS" ]; then
+            echo "Failed to fetch citations, skipping update"
+            exit 0
+          fi
+
+          echo "Current citation count: $CITATIONS"
+          echo "CITATIONS=$CITATIONS" >> $GITHUB_ENV
+
+      - name: Update index.html
+        run: |
+          CURRENT=$(grep -oP 'data-target="\d+"' index.html | grep -oP '\d+' | sed -n '3p')
+          echo "Current value in HTML: $CURRENT"
+          echo "New value: $CITATIONS"
+
+          if [ "$CURRENT" != "$CITATIONS" ] && [ -n "$CITATIONS" ]; then
+            sed -i "s/data-target=\"$CURRENT\"\(.*Citations\)/data-target=\"$CITATIONS\"\1/" index.html
+            echo "Updated citation count from $CURRENT to $CITATIONS"
+          else
+            echo "No update needed"
+            exit 0
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name "Vispi Karkaria"
+          git config user.email "vispikarkaria127@gmail.com"
+          git add index.html
+          git diff --cached --quiet || (git commit -m "Auto-update citation count to $CITATIONS" && git push)
