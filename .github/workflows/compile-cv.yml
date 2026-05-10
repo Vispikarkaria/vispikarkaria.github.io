@@ -14,7 +14,7 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: assets/cv/cv.tex
+          root_file: cv.tex
           working_directory: assets/cv
 
       - name: Commit PDF
