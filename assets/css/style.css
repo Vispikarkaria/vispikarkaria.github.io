@@ -384,6 +384,95 @@ section:nth-child(even) { background: var(--bg-alt); }
   transform: translateY(0);
 }
 
+/* News Banner */
+.news-banner {
+  background: linear-gradient(90deg, rgba(201,169,110,0.08), rgba(201,169,110,0.04));
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+  padding: 0.8rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+.news-badge {
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 0.6rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.skill-tag {
+  background: var(--white);
+  border: 1px solid rgba(201,169,110,0.25);
+  color: var(--text);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.skill-tag:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201,169,110,0.25);
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+  background: none;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-body);
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+.dark-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --bg: #1A1A2E;
+  --bg-alt: #16213E;
+  --text: #E8E8E8;
+  --text-body: #B0B0B0;
+  --white: #1E1E30;
+  --shadow: 0 4px 20px rgba(0,0,0,0.3);
+  --shadow-hover: 0 8px 32px rgba(201,169,110,0.2);
+}
+body.dark-mode .navbar-custom {
+  background: rgba(26,26,46,0.95);
+}
+body.dark-mode .navbar-custom .navbar-brand,
+body.dark-mode .navbar-custom .nav-link { color: #E8E8E8; }
+body.dark-mode .navbar-custom .nav-link:hover,
+body.dark-mode .navbar-custom .nav-link.active { color: var(--accent); }
+body.dark-mode .dark-toggle { border-color: rgba(255,255,255,0.2); color: #E8E8E8; }
+body.dark-mode .skill-tag { background: var(--white); border-color: rgba(201,169,110,0.3); color: var(--text); }
+body.dark-mode .news-banner { background: rgba(201,169,110,0.05); border-color: rgba(201,169,110,0.1); }
+body.dark-mode .pub-list li { border-bottom-color: rgba(255,255,255,0.05); }
+body.dark-mode .footer { background: #0F0F1A; }
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 { font-size: 2rem; }
@@ -391,4 +480,6 @@ section:nth-child(even) { background: var(--bg-alt); }
   .metric-item { font-size: 0.85rem; }
   section { padding: 3.5rem 0; }
   .timeline { padding-left: 1.5rem; }
+  .skills-grid { gap: 0.5rem; }
+  .skill-tag { font-size: 0.78rem; padding: 0.4rem 0.9rem; }
 }

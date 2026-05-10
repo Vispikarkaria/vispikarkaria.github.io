@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://vispikarkaria.github.io/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vispikarkaria.github.io/blog.html</loc>
+    <lastmod>2025-02-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vispikarkaria.github.io/assets/cv/cv.pdf</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>
