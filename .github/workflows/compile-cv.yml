@@ -1,0 +1,26 @@
+name: Compile CV
+
+on:
+  push:
+    paths:
+      - 'assets/cv/cv.tex'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: assets/cv/cv.tex
+          working_directory: assets/cv
+
+      - name: Commit PDF
+        run: |
+          git config user.name "Vispi Karkaria"
+          git config user.email "vispikarkaria127@gmail.com"
+          git add assets/cv/cv.pdf
+          git diff --cached --quiet || git commit -m "Compile CV PDF"
+          git push
