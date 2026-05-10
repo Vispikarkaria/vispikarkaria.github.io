@@ -163,7 +163,7 @@ img { max-width: 100%; }
 }
 
 /* Sections */
-section { padding: 5rem 0; }
+section { padding: 3.5rem 0; }
 section:nth-child(even) { background: var(--bg-alt); }
 .section-title {
   font-size: 2rem;
@@ -215,6 +215,9 @@ section:nth-child(even) { background: var(--bg-alt); }
 }
 .card-custom h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 .card-custom p { font-size: 0.9rem; color: var(--text-body); margin: 0; }
+.card-custom.compact { padding: 1.2rem; text-align: center; }
+.card-custom.compact .icon { margin: 0 auto 0.8rem; width: 44px; height: 44px; font-size: 1.1rem; }
+.card-custom.compact h4 { font-size: 0.95rem; margin-bottom: 0; }
 
 /* Featured Work */
 .project-card {
@@ -327,6 +330,9 @@ section:nth-child(even) { background: var(--bg-alt); }
 .edu-card .degree { font-weight: 700; font-size: 1rem; color: var(--text); }
 .edu-card .school { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
 .edu-card .details { font-size: 0.85rem; color: var(--text-body); margin-top: 0.5rem; }
+.edu-card.compact { padding: 1.2rem; text-align: center; }
+.edu-card.compact .degree { font-size: 0.9rem; margin-bottom: 0.2rem; }
+.edu-card.compact .details { font-size: 0.8rem; margin-top: 0.2rem; }
 
 /* Blog Preview */
 .blog-card {
