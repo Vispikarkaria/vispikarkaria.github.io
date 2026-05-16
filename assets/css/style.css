@@ -552,6 +552,36 @@ body.dark-mode .footer h3 { color: #E8E8E8; }
 body.dark-mode .blog-card h5 a { color: #E8E8E8; }
 body.dark-mode .blog-card h5 a:hover { color: #C9A96E; }
 
+/* Filter Buttons */
+.filter-btn {
+  background: var(--white);
+  border: 1px solid rgba(201,169,110,0.25);
+  color: var(--text-body);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.filter-btn.active {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+body.dark-mode .filter-btn {
+  background: #1E1E30;
+  border-color: rgba(201,169,110,0.3);
+  color: #B0B0B0;
+}
+body.dark-mode .filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 { font-size: 2rem; }
