@@ -1,237 +1,159 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Scientific Foundation Models in Manufacturing" />
-    <meta name="author" content="Vispi Nevile Karkaria" />
-    <title>Scientific Foundation Models</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Nunito', sans-serif;
-            color: #fff;
-            background-color: #121212;
-        }
-        .content-section {
-            background-color: #222;
-            padding: 3rem 1.5rem;
-        }
-        .blog-content {
-            color: #e0e0e0;
-        }
-        .blog-content h2, .blog-content h3 {
-            color: #e0e0e0;
-        }
-        .image-container {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .image-container img {
-            border: 1px solid #444;
-            border-radius: 5px;
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scientific Foundation Models | Vispi Karkaria</title>
+  <meta name="description" content="Scientific Foundation Models in Manufacturing" />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding-top: 120px; padding-bottom: 4rem; }
+    .blog-article h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; }
+    .blog-article h3 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.6rem; }
+    .blog-article p, .blog-article li { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
+    .blog-article ul, .blog-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .blog-article img { border-radius: var(--radius); box-shadow: var(--shadow); margin: 1.5rem 0; }
+    .blog-article .lead { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+    .blog-article code { background: var(--bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.9rem; }
+    .blog-article pre { background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius); overflow-x: auto; margin: 1.5rem 0; }
+    .blog-article pre code { background: none; padding: 0; }
+    body.dark-mode .blog-article p, body.dark-mode .blog-article li { color: #B0B0B0; }
+    body.dark-mode .blog-article pre, body.dark-mode .blog-article code { background: #16213E; }
+  </style>
 </head>
-
 <body>
 
-<section class="mt-5 pt-5 blog-content" style="font-size: 1.2rem;"></section>
-    <div class="container">
-
-        <!-- Back Button -->
-        <a href="https://vispikarkaria.github.io/blog.html">
-            <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
-        </a>
-
-        <h2>Scientific Foundation Models: Transforming Research Across Disciplines</h2>
-        <p class="lead">Author: Vispi Nevile Karkaria</p>
-
-        <h3>Introduction</h3>
-        <p>
-            Foundation models are changing scientific research, offering powerful AI-driven approaches to discovery, optimization, and prediction across multiple domains. Unlike traditional task-specific models, <strong>Scientific Foundation Models (SciFMs)</strong> are pre-trained on vast datasets and fine-tuned for specialized applications, enabling cross-domain knowledge transfer and accelerating breakthroughs in fields such as physics, biology, chemistry, and climate science.
-        </p>
-
-        <h3>How SciFMs Are Changing Scientific Discovery</h3>
-        <ul>
-            <li><strong>Physics & Engineering:</strong> AI-driven surrogate models dramatically reduce the computational cost of solving physical systems, from fluid dynamics to climate simulations.  
-                <ul>
-                    <li><strong>Neural Operator Models (FNO, DeepONet, ASNO):</strong> Foundation models that solve partial differential equations (PDEs) for physics-based simulations in fluid dynamics, heat transfer, and structural mechanics.</li>
-                    <li><strong>Graph Neural Networks (GNNs) for Materials Science:</strong> Used in computational materials discovery and quantum chemistry simulations.</li>
-                </ul>
-            </li>
-        
-            <li><strong>Chemistry & Materials Science:</strong> Models like MatterGen accelerate materials and drug discovery, predicting new molecular structures with desired properties at an unprecedented speed.  
-                <ul>
-                    <li><strong>SchNet & OrbNet:</strong> Molecular property prediction models trained on quantum chemistry datasets.</li>
-                    <li><strong>MoleculeFormer:</strong> A transformer-based SciFM for drug design and material discovery.</li>
-                    <li><strong>GNoME (Graph Networks for Materials Exploration):</strong> Used by DeepMind to predict novel materials with superior properties.</li>
-                </ul>
-            </li>
-        
-            <li><strong>Biology & Medicine:</strong> AI models such as AlphaFold2 and protein language models (PLMs) are revolutionizing genomics, protein function prediction, and drug design.  
-                <ul>
-                    <li><strong>AlphaFold2 & RoseTTAFold:</strong> Foundation models for protein structure prediction.</li>
-                    <li><strong>ESM-2 (Evolutionary Scale Modeling):</strong> A transformer-based model trained on millions of protein sequences to predict structure and function.</li>
-                    <li><strong>BioGPT & Med-PaLM:</strong> SciFMs for biomedical literature synthesis and medical question answering.</li>
-                </ul>
-            </li>
-        
-            <li><strong>Environmental Science:</strong> AI-powered weather and climate models improve forecasting accuracy, extreme event prediction, and sustainable resource management.  
-                <ul>
-                    <li><strong>FourCastNet:</strong> A foundation model for weather and climate predictions, using deep learning to accelerate forecasting.</li>
-                    <li><strong>ClimaX:</strong> A foundation model designed for climate science applications.</li>
-                    <li><strong>DeepSD (Deep Learning Super-Resolution for Climate Science):</strong> Enhances low-resolution climate model outputs using AI.</li>
-                </ul>
-            </li>
-        </ul>
-        
-
-        <h3>Key Advancements & Challenges</h3>
-        <ul>
-            <li><strong>Multimodal AI:</strong> Integrating text, images, simulations, and numerical data for more comprehensive scientific insights.</li>
-            <li><strong>Computational Scaling:</strong> Large models require massive computational resources, but optimization techniques like LoRA and adapter-based fine-tuning are helping make them more accessible.</li>
-            <li><strong>Interpretability & Trust:</strong> Models often act as "black boxes," making it crucial to develop more interpretable AI frameworks for scientific reasoning.</li>
-            <li><strong>Autonomous Discovery:</strong> The next frontier involves AI-assisted hypothesis generation and experimental design, moving towards truly autonomous scientific agents.</li>
-        </ul>
-
-        <h3>The Future of AI-Driven Science</h3>
-        <p>
-            Scientific Foundation Models are expected to play a critical role in research by supporting data-driven discovery and computational modeling. Improvements in interpretability, computational efficiency, and ethical considerations will enhance their integration into automated workflows and interdisciplinary research. The combination of AI-driven pattern recognition and domain-specific modeling provides a structured approach to analyzing complex scientific datasets, improving predictive accuracy and enabling more scalable simulations.
-        </p>
-
-        <h3>Application in Manufacturing</h3>
-        <p>
-            In this figure, we introduce the concept of the <strong>scientific foundation model</strong> in manufacturing, which combines the strengths of specialized local models with the power of massive external data. On the left, traditional AI models focus on specific tasks such as predicting porosity, melt pool depth, melt pool temperature, and microstructure in manufacturing processes. While effective in their individual applications, these models often lack the ability to generalize across different datasets and materials, limiting their scalability.
-        </p>
-
-
-        <div class="image-container" style="background-color: white; padding: 10px; border-radius: 5px; text-align: center;">
-            <img src="https://vispikarkaria.github.io/blogs/Manufacturing_foundation_model.png" alt="Manufacturing Foundation Model" style="display: block; margin: auto;">
-            <p class="image-caption">Figure: Overview of a Manufacturing Foundation Model.</p>
-        </div>
-
-      
-        <p>
-            On the right, the <strong>Foundation Model</strong> leverages large-scale, multi-source data to learn broad and complex patterns, providing a more generalizable and interpretable approach. By integrating both local manufacturing data and external sources, it creates a unified framework that can be fine-tuned for specific tasks, such as optimizing melt pool temperature in welding.
-        </p>
-
-        <p>
-            A key advantage of the foundation model is its ability to learn from <strong>multi-modal and multi-fidelity data</strong>, combining sensor readings, high-fidelity simulations, and approximations to improve robustness across different conditions. This adaptability enhances precision in manufacturing applications, improving predictive maintenance, defect detection, and process optimization. By merging AI-driven insights with physics-based models, this approach enables <strong>more scalable and intelligent digital twins for manufacturing</strong>.
-        </p>
-    </div>
-</section>
-
-<!-- Like Button Section -->
-<section class="mt-3 container text-center like-button-container">
-    <button id="likeButton">
-        <i class="fas fa-thumbs-up"></i> <!-- Thumbs up icon -->
-        Like
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">Vispi NK</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <span id="likeCount" style="margin-left: 10px;">0</span> Likes
-</section>
-
-<!-- Simple Comment Section -->
-<div class="container mt-5">
-    <h3>Leave a Comment</h3>
-
-    <!-- Comment Form -->
-    <form action="https://formspree.io/f/meoeyqbj" method="POST" class="comment-form">
-        <textarea id="commentInput" name="comment" rows="4" placeholder="Write your comment here..."></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
-
-    <!-- List of Comments -->
-    <div class="comments-list mt-4">
-        <ul id="commentList"></ul>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#opensource">Open Source</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#publications">Publications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+      </ul>
+      <a href="../assets/cv/cv.pdf" class="btn-cv" target="_blank"><i class="fas fa-download me-1"></i>Download CV</a>
+      <button class="dark-toggle ms-3" id="darkToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
     </div>
-</div><!-- CSS for the Comment Section -->
-<style>
-    .comment-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
-    .comment-form button {
-        background-color: #222;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    .comments-list ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-    .comments-list li {
-        border-bottom: 1px solid #ccc;
-        padding: 8px 0;
-        margin-bottom: 10px;
-    }
-</style>
+  </div>
+</nav>
 
-<!-- JavaScript for the Comment Section -->
-<script>
-    document.querySelector('.comment-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const commentInput = document.getElementById('commentInput');
-        
-        if (commentInput.value.trim() !== "") {
-            const commentList = document.getElementById('commentList');
-            const newComment = document.createElement('li');
-            newComment.textContent = commentInput.value.trim();
-            commentList.appendChild(newComment);
-            
-            commentInput.value = "";  // Clear the input
-        }
-    });
-</script>
+<article class="blog-article container">
+  <a href="../blog.html" class="btn-outline-custom" style="font-size:0.85rem;padding:0.4rem 1rem;margin-bottom:2rem;display:inline-block;"><i class="fas fa-arrow-left me-1"></i>All Posts</a>
+  <h1 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:0.5rem;">Scientific Foundation Models: Transforming Research Across Disciplines</h1>
+  <p class="lead">Vispi Karkaria &bull; 2025</p>
 
+  <h2>Introduction</h2>
+  <p>
+    Foundation models are changing scientific research, offering powerful AI-driven approaches to discovery, optimization, and prediction across multiple domains. Unlike traditional task-specific models, <strong>Scientific Foundation Models (SciFMs)</strong> are pre-trained on vast datasets and fine-tuned for specialized applications, enabling cross-domain knowledge transfer and accelerating breakthroughs in fields such as physics, biology, chemistry, and climate science.
+  </p>
 
+  <h2>How SciFMs Are Changing Scientific Discovery</h2>
+  <ul>
+    <li><strong>Physics & Engineering:</strong> AI-driven surrogate models dramatically reduce the computational cost of solving physical systems, from fluid dynamics to climate simulations.
+      <ul>
+        <li><strong>Neural Operator Models (FNO, DeepONet, ASNO):</strong> Foundation models that solve partial differential equations (PDEs) for physics-based simulations in fluid dynamics, heat transfer, and structural mechanics.</li>
+        <li><strong>Graph Neural Networks (GNNs) for Materials Science:</strong> Used in computational materials discovery and quantum chemistry simulations.</li>
+      </ul>
+    </li>
+    <li><strong>Chemistry & Materials Science:</strong> Models like MatterGen accelerate materials and drug discovery, predicting new molecular structures with desired properties at an unprecedented speed.
+      <ul>
+        <li><strong>SchNet & OrbNet:</strong> Molecular property prediction models trained on quantum chemistry datasets.</li>
+        <li><strong>MoleculeFormer:</strong> A transformer-based SciFM for drug design and material discovery.</li>
+        <li><strong>GNoME (Graph Networks for Materials Exploration):</strong> Used by DeepMind to predict novel materials with superior properties.</li>
+      </ul>
+    </li>
+    <li><strong>Biology & Medicine:</strong> AI models such as AlphaFold2 and protein language models (PLMs) are revolutionizing genomics, protein function prediction, and drug design.
+      <ul>
+        <li><strong>AlphaFold2 & RoseTTAFold:</strong> Foundation models for protein structure prediction.</li>
+        <li><strong>ESM-2 (Evolutionary Scale Modeling):</strong> A transformer-based model trained on millions of protein sequences to predict structure and function.</li>
+        <li><strong>BioGPT & Med-PaLM:</strong> SciFMs for biomedical literature synthesis and medical question answering.</li>
+      </ul>
+    </li>
+    <li><strong>Environmental Science:</strong> AI-powered weather and climate models improve forecasting accuracy, extreme event prediction, and sustainable resource management.
+      <ul>
+        <li><strong>FourCastNet:</strong> A foundation model for weather and climate predictions, using deep learning to accelerate forecasting.</li>
+        <li><strong>ClimaX:</strong> A foundation model designed for climate science applications.</li>
+        <li><strong>DeepSD (Deep Learning Super-Resolution for Climate Science):</strong> Enhances low-resolution climate model outputs using AI.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Key Advancements & Challenges</h2>
+  <ul>
+    <li><strong>Multimodal AI:</strong> Integrating text, images, simulations, and numerical data for more comprehensive scientific insights.</li>
+    <li><strong>Computational Scaling:</strong> Large models require massive computational resources, but optimization techniques like LoRA and adapter-based fine-tuning are helping make them more accessible.</li>
+    <li><strong>Interpretability & Trust:</strong> Models often act as "black boxes," making it crucial to develop more interpretable AI frameworks for scientific reasoning.</li>
+    <li><strong>Autonomous Discovery:</strong> The next frontier involves AI-assisted hypothesis generation and experimental design, moving towards truly autonomous scientific agents.</li>
+  </ul>
+
+  <h2>The Future of AI-Driven Science</h2>
+  <p>
+    Scientific Foundation Models are expected to play a critical role in research by supporting data-driven discovery and computational modeling. Improvements in interpretability, computational efficiency, and ethical considerations will enhance their integration into automated workflows and interdisciplinary research. The combination of AI-driven pattern recognition and domain-specific modeling provides a structured approach to analyzing complex scientific datasets, improving predictive accuracy and enabling more scalable simulations.
+  </p>
+
+  <h2>Application in Manufacturing</h2>
+  <p>
+    In this figure, we introduce the concept of the <strong>scientific foundation model</strong> in manufacturing, which combines the strengths of specialized local models with the power of massive external data. On the left, traditional AI models focus on specific tasks such as predicting porosity, melt pool depth, melt pool temperature, and microstructure in manufacturing processes. While effective in their individual applications, these models often lack the ability to generalize across different datasets and materials, limiting their scalability.
+  </p>
+
+  <figure class="text-center">
+    <img src="Manufacturing_foundation_model.png" alt="Manufacturing Foundation Model" class="img-fluid">
+    <figcaption style="font-size:0.85rem;opacity:0.7;margin-top:0.5rem;">Figure: Overview of a Manufacturing Foundation Model.</figcaption>
+  </figure>
+
+  <p>
+    On the right, the <strong>Foundation Model</strong> leverages large-scale, multi-source data to learn broad and complex patterns, providing a more generalizable and interpretable approach. By integrating both local manufacturing data and external sources, it creates a unified framework that can be fine-tuned for specific tasks, such as optimizing melt pool temperature in welding.
+  </p>
+
+  <p>
+    A key advantage of the foundation model is its ability to learn from <strong>multi-modal and multi-fidelity data</strong>, combining sensor readings, high-fidelity simulations, and approximations to improve robustness across different conditions. This adaptability enhances precision in manufacturing applications, improving predictive maintenance, defect detection, and process optimization. By merging AI-driven insights with physics-based models, this approach enables <strong>more scalable and intelligent digital twins for manufacturing</strong>.
+  </p>
+
+</article>
+
+<!-- Footer -->
 <footer class="footer">
-    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="container text-center">
+    <div class="social-links">
+      <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Vispikarkaria" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/VispiKarkaria3" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:vispikarkaria127@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">&copy; 2025 Vispi Karkaria</p>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Time Tracking Script
-    let startTime = new Date().getTime();
-    
-    window.addEventListener('beforeunload', function() {
-        let endTime = new Date().getTime();
-        let timeSpent = (endTime - startTime) / 1000;
-        console.log('User spent', timeSpent, 'seconds on the page.');
-        
-        // You can replace the console.log with an AJAX call to send data to your server.
-    });
-
-    // Like Button Script
-    let likeCount = 0;
-
-    document.getElementById('likeButton').addEventListener('click', function() {
-        likeCount++;
-        document.getElementById('likeCount').innerText = likeCount;
-        this.disabled = true; // Disables the button after one click
-    });
+(function(){
+  const toggle = document.getElementById('darkToggle');
+  const icon = toggle.querySelector('i');
+  if(localStorage.getItem('darkMode')==='true'){
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon','fa-sun');
+  }
+  toggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', dark);
+    icon.classList.replace(dark?'fa-moon':'fa-sun', dark?'fa-sun':'fa-moon');
+  });
+})();
 </script>
-
-<!-- External Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
 </body>
 </html>

@@ -1,464 +1,225 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
-    <meta name="author" content="Vispi Nevile Karkaria" />
-    <title>Vispi Nevile Karkaria</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        /* Dark Theme Styles */
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Nunito', sans-serif;
-            color: #e0e0e0;
-            background-color: #121212;
-        }
-
-        .masthead {
-            background: url('../assets/img/78759.jpg') no-repeat center center;
-            background-size: cover;
-            height: 100%;
-            text-align: center;
-            padding-top: 70px;
-        }
-
-        .masthead h1, .masthead h2 {
-            font-weight: 700;
-            letter-spacing: .1rem;
-            color: #e0e0e0;
-        }
-
-        .navbar {
-            background-color: #222;
-        }
-
-        .navbar-dark .navbar-brand:hover,
-        .navbar-dark .nav-link:hover {
-            color: rgba(255, 255, 255, .7);
-        }
-
-        .navbar-toggler {
-            background: rgba(255, 255, 255, .5);
-        }
-
-        .navbar-nav .nav-item .nav-link {
-            color: rgba(255, 255, 255, .8);
-        }
-
-        .about-section {
-            background-color: #222;
-            padding: 3rem 1.5rem;
-            color: #e0e0e0;
-        }
-
-        .footer a {
-            color: grey;
-            margin: 0 1rem;
-        }
-
-        .edu-item {
-            border: 1px solid #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background-color: #333;
-        }
-
-        .smaller-text {
-            font-size: 0.85rem;
-            color: #e0e0e0;
-        }
-
-        #cv-summary {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 20px;
-            background: #222;
-            color: #e0e0e0;
-        }
-
-        .blog-content h2, .blog-content h3, .blog-content p.lead {
-            color: #e0e0e0;
-        }
-
-        .like-button-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #likeButton {
-            background-color: #444;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        #likeButton:hover {
-            background-color: #666;
-            color: #e0e0e0;
-        }
-
-        #likeButton:disabled {
-            background-color: #4CAF50;
-            cursor: default;
-        }
-
-        #likeButton .fa-thumbs-up {
-            margin-right: 5px;
-        }
-
-        .comment-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #555;
-            background-color: #333;
-            color: #e0e0e0;
-        }
-
-        .comment-form button {
-            background-color: #444;
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .comment-form button:hover {
-            background-color: #666;
-        }
-
-        .comments-list ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .comments-list li {
-            border-bottom: 1px solid #555;
-            padding: 8px 0;
-            margin-bottom: 10px;
-            color: #e0e0e0;
-        }
-
-        .back-button {
-            background-color: #444;
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #666;
-            color: #e0e0e0;
-        }
-
-        .image-caption {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #bbb;
-        }
-
-        .image-container img {
-            border: 1px solid #444;
-            border-radius: 5px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Impact of Language Models on Engineering | Vispi Karkaria</title>
+  <meta name="description" content="A technical analysis of how language models are transforming engineering design, digital twins, and predictive maintenance." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding-top: 120px; padding-bottom: 4rem; }
+    .blog-article h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; }
+    .blog-article h3 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.6rem; }
+    .blog-article p, .blog-article li { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
+    .blog-article ul, .blog-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .blog-article img { border-radius: var(--radius); box-shadow: var(--shadow); margin: 1.5rem 0; }
+    .blog-article .lead { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+    .blog-article code { background: var(--bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.9rem; }
+    .blog-article pre { background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius); overflow-x: auto; margin: 1.5rem 0; }
+    .blog-article pre code { background: none; padding: 0; }
+    body.dark-mode .blog-article p, body.dark-mode .blog-article li { color: #B0B0B0; }
+    body.dark-mode .blog-article pre, body.dark-mode .blog-article code { background: #16213E; }
+  </style>
 </head>
-    
 <body>
 
-    
-<script>
-    document.getElementById('backButton').addEventListener('click', function() {
-        window.history.back();
-    });
-</script>
-
-<!-- Blog Content -->
-<section class="mt-5 pt-5 blog-content">
-    <div class="container">
-        <!-- Back Button -->
-         <a href="https://vispikarkaria.github.io/blog.html">
-            <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
-        </a>
-        
-
-        <h2>The Impact of Language Models on Engineering: A Technical Analysis</h2>
-        <p class="lead">Published: November 4, 2024 | Author: Vispi Nevile Karkaria</p>
-        
-        <h3>Introduction</h3>
-        <p>
-            Language models (LMs), especially those powered by deep learning techniques such as GPT and BERT, have emerged as transformative tools across various fields, including engineering. These models are not just limited to natural language processing (NLP) tasks but have extended their capabilities to enhance engineering processes, research, and decision-making. In this essay, we delve into the impact of LMs on engineering, focusing on their technical contributions to engineering design, process optimization, digital twins, predictive maintenance, and data-driven decision-making.
-        </p>
-
-        <!-- Image of Large Language Model in Engineering -->
-        <div class="text-center mb-4">
-            <img src="https://vispikarkaria.github.io/blogs/LLM_Engineering.png" alt="Large Language Model in Engineering" style="max-width: 40%; height: auto; border-radius: 8px;">
-            <p class="text-muted mt-2">Figure: Visualization of Language Models in Engineering Applications</p>
-        </div>
-        
-        <h3>Language Models in Engineering Design and Optimization</h3>
-        <p>
-            Language models can analyze complex design requirements and generate potential solutions, making them a crucial asset in the engineering design and optimization process. By processing natural language descriptions of design constraints, objectives, and specifications, LMs facilitate:
-        </p>
-        <ul>
-            <li><strong>Automated Design Generation:</strong>
-                <ul>
-                    <li>LMs can interpret text-based design requirements and generate CAD (Computer-Aided Design) or FEA (Finite Element Analysis) inputs directly. For example, LMs like GPT-4 can process user inputs describing desired beam strength, material properties, or geometry and suggest designs that meet these criteria.</li>
-                    <li>In optimization tasks, LMs assist in converting design problems into mathematical formulations that are suitable for optimization solvers, effectively bridging human language and computational inputs.</li>
-                </ul>
-            </li>
-            <li><strong>Iterative Design Refinement:</strong>
-                <ul>
-                    <li>With the ability to understand and process natural language feedback, LMs can iteratively refine designs based on user inputs or optimization results, speeding up the prototype development cycle.</li>
-                </ul>
-            </li>
-            <li><strong>Generative Design Solutions:</strong>
-                <ul>
-                    <li>Advanced generative models, such as Variational Autoencoders (VAEs) paired with LMs, generate new design alternatives by learning from existing design databases. For instance, they can suggest novel structural configurations based on learned representations of prior design solutions.</li>
-                </ul>
-            </li>
-        </ul>
-        
-        <h3>Enhancing Digital Twin Development</h3>
-        <p>
-            Digital twins (DTs), which represent virtual replicas of physical systems, benefit significantly from LMs. Language models enable better information flow, predictive capabilities, and model calibration in DTs.
-        </p>
-        <ul>
-            <li><strong>Data Interpretation and Integration:</strong>
-                <ul>
-                    <li>LMs help process unstructured data sources, such as maintenance logs, research papers, and operational manuals, and integrate this information into DT models.</li>
-                    <li>This integration supports the calibration and updating of digital twins by providing a broader context of operational conditions, making DTs more accurate and dynamic.</li>
-                </ul>
-            </li>
-            <li><strong>Spatio-Temporal Analysis:</strong>
-                <ul>
-                    <li>Combining LMs with spatio-temporal neural operators facilitates predictive modeling of dynamic systems, leading to more accurate DT calibration and real-time adaptation. For instance, the integration of LMs with hybrid models like the Attention-Based Spatial-Temporal Neural Operator (ASNO) enables improved predictions in manufacturing processes by accurately modeling both temporal trends and spatial dependencies.</li>
-                </ul>
-            </li>
-            <li><strong>Natural Language Interface for Digital Twins:</strong>
-                <ul>
-                    <li>The interface of DTs is often complex and technical, requiring domain-specific knowledge. LMs simplify interactions with DTs by allowing engineers to communicate using natural language, streamlining tasks like querying system states, adjusting parameters, and making real-time decisions.</li>
-                </ul>
-            </li>
-        </ul>
-        
-        <h3>Predictive Maintenance and Fault Diagnosis</h3>
-        <p>
-            Predictive maintenance aims to anticipate failures before they occur, minimizing downtime and optimizing performance. LMs contribute to this process by analyzing large datasets, including historical logs, failure reports, and maintenance records, to identify patterns indicative of potential failures.
-        </p>
-        <ul>
-            <li><strong>Textual Data Mining for Failure Patterns:</strong>
-                <ul>
-                    <li>LMs can mine text-based failure logs and maintenance reports to extract common failure patterns and potential causal factors, leading to better predictive maintenance models.</li>
-                    <li>For instance, transformers trained on maintenance records can identify subtle correlations between operational conditions and failure events, which might be overlooked in traditional statistical analyses.</li>
-                </ul>
-            </li>
-            <li><strong>Fault Diagnosis through Sequential Analysis:</strong>
-                <ul>
-                    <li>LMs analyze sequential maintenance records and sensor data, predicting component degradation trends over time. The sequence-to-sequence capabilities of transformer-based models are particularly useful for processing time-series data related to system performance, making them valuable for predictive maintenance.</li>
-                </ul>
-            </li>
-            <li><strong>Semantic Analysis for Root Cause Analysis:</strong>
-                <ul>
-                    <li>Language models help engineers perform root cause analysis by processing vast amounts of technical documents, manuals, and diagnostic reports. By clustering similar issues and extracting key insights from documents, LMs provide engineers with a clearer understanding of underlying causes and remedial measures.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>Decision-Making and Research Advancements</h3>
-        <p>
-            Language models have not only impacted engineering practices but also driven advancements in engineering research and decision-making.
-        </p>
-        <ul>
-            <li><strong>Knowledge Synthesis from Literature:</strong>
-                <ul>
-                    <li>LMs facilitate knowledge synthesis by extracting, summarizing, and correlating information from a vast array of scientific literature. Engineers can use LMs to identify trends in research, summarize technical papers, and integrate state-of-the-art findings into their work, ensuring that decision-making is informed by the latest scientific advancements.</li>
-                </ul>
-            </li>
-            <li><strong>Optimization of Research Processes:</strong>
-                <ul>
-                    <li>LMs aid in drafting research proposals, writing technical reports, and generating summaries of experimental results, thereby enhancing the efficiency of the research process. For example, language models can translate raw experimental data into structured findings, reducing the manual burden of analysis and reporting.</li>
-                </ul>
-            </li>
-            <li><strong>Ethical and Safety Compliance in Engineering:</strong>
-                <ul>
-                    <li>By analyzing regulations, safety guidelines, and ethical standards, LMs help ensure that engineering projects adhere to legal and safety requirements. Engineers can use LMs to cross-reference compliance documents and verify that designs or processes meet necessary standards.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>Challenges and Future Directions</h3>
-        <p>
-            Despite their significant impact, the adoption of LMs in engineering faces several challenges:
-        </p>
-        <ul>
-            <li><strong>Domain-Specific Adaptation:</strong>
-                <ul>
-                    <li>Engineering problems are highly specialized, often requiring tailored LMs that understand specific jargon, constraints, and processes. Research is needed to adapt and fine-tune generic LMs for niche engineering applications.</li>
-                </ul>
-            </li>
-            <li><strong>Integration with Existing Systems:</strong>
-                <ul>
-                    <li>Engineering systems are complex, involving a mix of numerical simulations, physical models, and operational constraints. Seamlessly integrating LMs with these systems, especially in real-time, remains a technical challenge that needs further research.</li>
-                </ul>
-            </li>
-            <li><strong>Interpretability and Trust:</strong>
-                <ul>
-                    <li>The "black-box" nature of LMs limits their acceptability in safety-critical engineering applications. Enhancing interpretability and explainability in LMs, especially when making predictions or suggesting design changes, is crucial for broader adoption.</li>
-                </ul>
-            </li>
-            <li><strong>Ethical Concerns and Data Bias:</strong>
-                <ul>
-                    <li>LMs are trained on historical data, which may contain biases. For engineering applications, where decisions directly impact safety and functionality, it is essential to address these biases to ensure fair, ethical, and reliable outcomes.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>Conclusion</h3>
-        <p>
-            Language models have reshaped the landscape of engineering by improving design processes, enhancing digital twin accuracy, enabling predictive maintenance, and advancing engineering research. However, as their application expands, addressing challenges related to domain specificity, interpretability, and ethical concerns will be critical. The future of LMs in engineering holds promise for more adaptive, efficient, and accurate systems that can respond dynamically to evolving operational demands and challenges.
-        </p>
-    </div>
-</section>
-
-
-<!-- Like Button Section -->
-<section class="mt-3 container text-center like-button-container">
-    <button id="likeButton">
-        <i class="fas fa-thumbs-up"></i> <!-- Thumbs up icon -->
-        Like
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">Vispi NK</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <span id="likeCount" style="margin-left: 10px;">0</span> Likes
-</section>
-
-
-<!-- Simple Comment Section -->
-<div class="container mt-5">
-    <h3>Leave a Comment</h3>
-
-    <!-- Comment Form -->
-    <div class="comment-form">
-        <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea><br>
-        <button id="submitComment">Submit</button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#opensource">Open Source</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#publications">Publications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+      </ul>
+      <a href="../assets/cv/cv.pdf" class="btn-cv" target="_blank"><i class="fas fa-download me-1"></i>Download CV</a>
+      <button class="dark-toggle ms-3" id="darkToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
     </div>
+  </div>
+</nav>
 
-    <!-- List of Comments -->
-    <div class="comments-list mt-4">
-        <ul id="commentList"></ul>
-    </div>
-</div><!-- CSS for the Comment Section -->
-<style>
-    .comment-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
-    .comment-form button {
-        background-color: #222;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    .comments-list ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-    .comments-list li {
-        border-bottom: 1px solid #ccc;
-        padding: 8px 0;
-        margin-bottom: 10px;
-    }
-</style>
+<article class="blog-article container">
+  <a href="../blog.html" class="btn-outline-custom" style="font-size:0.85rem;padding:0.4rem 1rem;margin-bottom:2rem;display:inline-block;"><i class="fas fa-arrow-left me-1"></i>All Posts</a>
+  <h1 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:0.5rem;">The Impact of Language Models on Engineering: A Technical Analysis</h1>
+  <p class="lead">Vispi Karkaria &bull; November 4, 2024</p>
 
-<!-- JavaScript for the Comment Section -->
-<script>
-    document.getElementById('submitComment').addEventListener('click', function() {
-        const commentInput = document.getElementById('commentInput');
-        
-        if (commentInput.value.trim() !== "") {
-            fetch('send_email.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'comment=' + encodeURIComponent(commentInput.value.trim()),
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                const commentList = document.getElementById('commentList');
-                const newComment = document.createElement('li');
-                newComment.textContent = commentInput.value.trim();
-                commentList.appendChild(newComment);
-                
-                commentInput.value = "";  // Clear the input
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }
-    });
-</script>
+  <h2>Introduction</h2>
+  <p>
+    Language models (LMs), especially those powered by deep learning techniques such as GPT and BERT, have emerged as transformative tools across various fields, including engineering. These models are not just limited to natural language processing (NLP) tasks but have extended their capabilities to enhance engineering processes, research, and decision-making. In this essay, we delve into the impact of LMs on engineering, focusing on their technical contributions to engineering design, process optimization, digital twins, predictive maintenance, and data-driven decision-making.
+  </p>
 
+  <figure class="text-center">
+    <img src="LLM_Engineering.png" alt="Large Language Model in Engineering" class="img-fluid" style="max-width:60%;">
+    <figcaption style="font-size:0.85rem;opacity:0.7;margin-top:0.5rem;">Figure: Visualization of Language Models in Engineering Applications</figcaption>
+  </figure>
 
+  <h2>Language Models in Engineering Design and Optimization</h2>
+  <p>
+    Language models can analyze complex design requirements and generate potential solutions, making them a crucial asset in the engineering design and optimization process. By processing natural language descriptions of design constraints, objectives, and specifications, LMs facilitate:
+  </p>
+  <ul>
+    <li><strong>Automated Design Generation:</strong>
+      <ul>
+        <li>LMs can interpret text-based design requirements and generate CAD (Computer-Aided Design) or FEA (Finite Element Analysis) inputs directly. For example, LMs like GPT-4 can process user inputs describing desired beam strength, material properties, or geometry and suggest designs that meet these criteria.</li>
+        <li>In optimization tasks, LMs assist in converting design problems into mathematical formulations that are suitable for optimization solvers, effectively bridging human language and computational inputs.</li>
+      </ul>
+    </li>
+    <li><strong>Iterative Design Refinement:</strong>
+      <ul>
+        <li>With the ability to understand and process natural language feedback, LMs can iteratively refine designs based on user inputs or optimization results, speeding up the prototype development cycle.</li>
+      </ul>
+    </li>
+    <li><strong>Generative Design Solutions:</strong>
+      <ul>
+        <li>Advanced generative models, such as Variational Autoencoders (VAEs) paired with LMs, generate new design alternatives by learning from existing design databases. For instance, they can suggest novel structural configurations based on learned representations of prior design solutions.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Enhancing Digital Twin Development</h2>
+  <p>
+    Digital twins (DTs), which represent virtual replicas of physical systems, benefit significantly from LMs. Language models enable better information flow, predictive capabilities, and model calibration in DTs.
+  </p>
+  <ul>
+    <li><strong>Data Interpretation and Integration:</strong>
+      <ul>
+        <li>LMs help process unstructured data sources, such as maintenance logs, research papers, and operational manuals, and integrate this information into DT models.</li>
+        <li>This integration supports the calibration and updating of digital twins by providing a broader context of operational conditions, making DTs more accurate and dynamic.</li>
+      </ul>
+    </li>
+    <li><strong>Spatio-Temporal Analysis:</strong>
+      <ul>
+        <li>Combining LMs with spatio-temporal neural operators facilitates predictive modeling of dynamic systems, leading to more accurate DT calibration and real-time adaptation. For instance, the integration of LMs with hybrid models like the Attention-Based Spatial-Temporal Neural Operator (ASNO) enables improved predictions in manufacturing processes by accurately modeling both temporal trends and spatial dependencies.</li>
+      </ul>
+    </li>
+    <li><strong>Natural Language Interface for Digital Twins:</strong>
+      <ul>
+        <li>The interface of DTs is often complex and technical, requiring domain-specific knowledge. LMs simplify interactions with DTs by allowing engineers to communicate using natural language, streamlining tasks like querying system states, adjusting parameters, and making real-time decisions.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Predictive Maintenance and Fault Diagnosis</h2>
+  <p>
+    Predictive maintenance aims to anticipate failures before they occur, minimizing downtime and optimizing performance. LMs contribute to this process by analyzing large datasets, including historical logs, failure reports, and maintenance records, to identify patterns indicative of potential failures.
+  </p>
+  <ul>
+    <li><strong>Textual Data Mining for Failure Patterns:</strong>
+      <ul>
+        <li>LMs can mine text-based failure logs and maintenance reports to extract common failure patterns and potential causal factors, leading to better predictive maintenance models.</li>
+        <li>For instance, transformers trained on maintenance records can identify subtle correlations between operational conditions and failure events, which might be overlooked in traditional statistical analyses.</li>
+      </ul>
+    </li>
+    <li><strong>Fault Diagnosis through Sequential Analysis:</strong>
+      <ul>
+        <li>LMs analyze sequential maintenance records and sensor data, predicting component degradation trends over time. The sequence-to-sequence capabilities of transformer-based models are particularly useful for processing time-series data related to system performance, making them valuable for predictive maintenance.</li>
+      </ul>
+    </li>
+    <li><strong>Semantic Analysis for Root Cause Analysis:</strong>
+      <ul>
+        <li>Language models help engineers perform root cause analysis by processing vast amounts of technical documents, manuals, and diagnostic reports. By clustering similar issues and extracting key insights from documents, LMs provide engineers with a clearer understanding of underlying causes and remedial measures.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Decision-Making and Research Advancements</h2>
+  <p>
+    Language models have not only impacted engineering practices but also driven advancements in engineering research and decision-making.
+  </p>
+  <ul>
+    <li><strong>Knowledge Synthesis from Literature:</strong>
+      <ul>
+        <li>LMs facilitate knowledge synthesis by extracting, summarizing, and correlating information from a vast array of scientific literature. Engineers can use LMs to identify trends in research, summarize technical papers, and integrate state-of-the-art findings into their work, ensuring that decision-making is informed by the latest scientific advancements.</li>
+      </ul>
+    </li>
+    <li><strong>Optimization of Research Processes:</strong>
+      <ul>
+        <li>LMs aid in drafting research proposals, writing technical reports, and generating summaries of experimental results, thereby enhancing the efficiency of the research process. For example, language models can translate raw experimental data into structured findings, reducing the manual burden of analysis and reporting.</li>
+      </ul>
+    </li>
+    <li><strong>Ethical and Safety Compliance in Engineering:</strong>
+      <ul>
+        <li>By analyzing regulations, safety guidelines, and ethical standards, LMs help ensure that engineering projects adhere to legal and safety requirements. Engineers can use LMs to cross-reference compliance documents and verify that designs or processes meet necessary standards.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Challenges and Future Directions</h2>
+  <p>
+    Despite their significant impact, the adoption of LMs in engineering faces several challenges:
+  </p>
+  <ul>
+    <li><strong>Domain-Specific Adaptation:</strong>
+      <ul>
+        <li>Engineering problems are highly specialized, often requiring tailored LMs that understand specific jargon, constraints, and processes. Research is needed to adapt and fine-tune generic LMs for niche engineering applications.</li>
+      </ul>
+    </li>
+    <li><strong>Integration with Existing Systems:</strong>
+      <ul>
+        <li>Engineering systems are complex, involving a mix of numerical simulations, physical models, and operational constraints. Seamlessly integrating LMs with these systems, especially in real-time, remains a technical challenge that needs further research.</li>
+      </ul>
+    </li>
+    <li><strong>Interpretability and Trust:</strong>
+      <ul>
+        <li>The "black-box" nature of LMs limits their acceptability in safety-critical engineering applications. Enhancing interpretability and explainability in LMs, especially when making predictions or suggesting design changes, is crucial for broader adoption.</li>
+      </ul>
+    </li>
+    <li><strong>Ethical Concerns and Data Bias:</strong>
+      <ul>
+        <li>LMs are trained on historical data, which may contain biases. For engineering applications, where decisions directly impact safety and functionality, it is essential to address these biases to ensure fair, ethical, and reliable outcomes.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>
+    Language models have reshaped the landscape of engineering by improving design processes, enhancing digital twin accuracy, enabling predictive maintenance, and advancing engineering research. However, as their application expands, addressing challenges related to domain specificity, interpretability, and ethical concerns will be critical. The future of LMs in engineering holds promise for more adaptive, efficient, and accurate systems that can respond dynamically to evolving operational demands and challenges.
+  </p>
+
+</article>
+
+<!-- Footer -->
 <footer class="footer">
-    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="container text-center">
+    <div class="social-links">
+      <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Vispikarkaria" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/VispiKarkaria3" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:vispikarkaria127@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">&copy; 2025 Vispi Karkaria</p>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Time Tracking Script
-    let startTime = new Date().getTime();
-    
-    window.addEventListener('beforeunload', function() {
-        let endTime = new Date().getTime();
-        let timeSpent = (endTime - startTime) / 1000;
-        console.log('User spent', timeSpent, 'seconds on the page.');
-        
-        // You can replace the console.log with an AJAX call to send data to your server.
-    });
-
-    // Like Button Script
-    let likeCount = 0;
-
-    document.getElementById('likeButton').addEventListener('click', function() {
-        likeCount++;
-        document.getElementById('likeCount').innerText = likeCount;
-        this.disabled = true; // Disables the button after one click
-    });
+(function(){
+  const toggle = document.getElementById('darkToggle');
+  const icon = toggle.querySelector('i');
+  if(localStorage.getItem('darkMode')==='true'){
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon','fa-sun');
+  }
+  toggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', dark);
+    icon.classList.replace(dark?'fa-moon':'fa-sun', dark?'fa-sun':'fa-moon');
+  });
+})();
 </script>
-
-<!-- External Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
 </body>
 </html>

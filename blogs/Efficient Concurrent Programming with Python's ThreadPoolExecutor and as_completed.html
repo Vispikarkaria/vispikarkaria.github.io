@@ -1,402 +1,194 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="PhD student focused on Machine Learning and Digital Twins" />
-    <meta name="author" content="Vispi Nevile Karkaria" />
-    <title>Vispi Nevile Karkaria</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Keeping just two fonts for simplicity -->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" />
-    <!-- Using only the latest bootstrap version -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Nunito', sans-serif;
-            color: #fff;
-        }
-        .masthead {
-            background: url('../assets/img/78759.jpg') no-repeat center center;
-            background-size: cover;
-            height: 100%;
-            text-align: center;
-            padding-top: 70px;
-        }
-        .masthead h1, .masthead h2 {
-            font-weight: 700;
-            letter-spacing: .1rem;
-        }
-        .navbar {
-            background-color: #222;
-            z-index: 1030; 
-        }
-        .about-section {
-            background-color: #222;
-            padding: 3rem 1.5rem;
-        }
-        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
-            color: rgba(255,255,255,.5);
-        }
-        .navbar-toggler {
-            background: rgba(255,255,255,.5);
-        }
-        .navbar-nav .nav-item .nav-link {
-            color: rgba(255,255,255,.8);
-        }
-
-        .footer a {
-            color: grey;
-            margin: 0 1rem;
-        }
-        .edu-item {
-            border: 1px solid #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background-color: transparent;
-        }
-        .smaller-text {
-            font-size: 0.85rem;
-        }
-        #cv-summary {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 20px;
-            align-items: center;
-            background: #222;
-        }
-
-        .blog-content {
-            color: #000; /* Black color */
-        }
-    
-        .blog-content h2, .blog-content h3 {
-            color: #000; /* Black color for headings */
-        }
-    
-        .blog-content p.lead {
-            color: #000; /* Black color for lead paragraph */
-        }
-        /* Added bottom margin to the body to create space for the footer */
-        body {
-            margin-bottom: 60px;  /* Adjust this value based on your footer's height */
-        }
-
-        /* Add these styles to your <style> section */
-        
-        .like-button-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #likeButton {
-            background-color: #222;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-        }
-        
-        #likeButton:hover {
-            background-color: #fff;
-            color: #222;
-        }
-        
-        #likeButton:disabled {
-            background-color: #4CAF50;  /* Green color indicating liked status */
-            cursor: default;
-        }
-        
-        #likeButton .fa-thumbs-up {
-            margin-right: 5px;
-        }
-
-        pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Efficient Concurrent Programming with Python's ThreadPoolExecutor | Vispi Karkaria</title>
+  <meta name="description" content="How to use Python's ThreadPoolExecutor and as_completed for efficient concurrent programming." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding-top: 120px; padding-bottom: 4rem; }
+    .blog-article h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; }
+    .blog-article h3 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.6rem; }
+    .blog-article p, .blog-article li { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
+    .blog-article ul, .blog-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .blog-article img { border-radius: var(--radius); box-shadow: var(--shadow); margin: 1.5rem 0; }
+    .blog-article .lead { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+    .blog-article code { background: var(--bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.9rem; }
+    .blog-article pre { background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius); overflow-x: auto; margin: 1.5rem 0; }
+    .blog-article pre code { background: none; padding: 0; }
+    body.dark-mode .blog-article p, body.dark-mode .blog-article li { color: #B0B0B0; }
+    body.dark-mode .blog-article pre, body.dark-mode .blog-article code { background: #16213E; }
+  </style>
 </head>
-
 <body>
-    
-<script>
-    document.getElementById('backButton').addEventListener('click', function() {
-        window.history.back();
-    });
-</script>
 
-   <!-- Blog Content -->
-<section class="mt-5 pt-5 blog-content">
-    <div class="container">
-        <!-- Back Button -->
-         <a href="https://vispikarkaria.github.io/blog.html">
-            <button id="backButton" style="background-color: #222; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 15px; cursor: pointer;">Go Back</button>
-        </a>
-
-        <!-- Main Title -->
-        <h2>Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</h2>
-        <p class="lead">Published: August 28, 2023 | Author: Vispi Nevile Karkaria</p>
-
-        <!-- Section: Introduction -->
-        <h3>How ThreadPoolExecutor and as_completed Can Help</h3>
-        <p>ThreadPoolExecutor and as_completed in Python's concurrent.futures library offer an efficient way to manage concurrent tasks. They enable:</p>
-        <ul>
-            <li>Better utilization of CPU cores, making your application faster and more efficient.</li>
-            <li>Improved execution time for I/O-bound tasks like file operations or network requests, as they don't have to wait for each other to complete.</li>
-            <li>A convenient API for handling asynchronous tasks, removing much of the complexity associated with concurrent programming.</li>
-        </ul>
-
-        <!-- Python Code Example for Introduction -->
-        <h4>Python Code Example</h4>
-        <p>To demonstrate, here is a simple Python code snippet using ThreadPoolExecutor and as_completed:</p>
-        <pre><code>
-        from concurrent.futures import ThreadPoolExecutor, as_completed
-
-        def worker_function(x):
-            return x * x
-
-        # Create a ThreadPoolExecutor
-        with ThreadPoolExecutor() as executor:
-            # Submit tasks to the executor
-            futures = {executor.submit(worker_function, i): i for i in range(5)}
-            # Process results as they complete
-            for future in as_completed(futures):
-                print(future.result())
-        </code></pre>
-        <p>The code above creates a ThreadPoolExecutor and submits five tasks to it. The tasks are processed concurrently, and their results are printed as they become available.</p>
-
-        <!-- Section: Use Cases -->
-        <h3>Use Cases</h3>
-        <h4>Data Scraping</h4>
-        <p>ThreadPoolExecutor can significantly expedite data scraping tasks by running multiple scrapers in parallel, thus reducing the time it takes to retrieve data from multiple sources.</p>
-
-        <!-- Python Code Example for Data Scraping -->
-        <h4>Python Code Example</h4>
-        <pre><code>
-        from concurrent.futures import ThreadPoolExecutor
-        import requests
-
-        def fetch_data(url):
-            return requests.get(url).text
-
-        urls = ['https://example.com/page1', 'https://example.com/page2']
-
-        # Create a ThreadPoolExecutor
-        with ThreadPoolExecutor() as executor:
-            # Fetch data from multiple URLs in parallel
-            results = list(executor.map(fetch_data, urls))
-        </code></pre>
-        <p>This example demonstrates how to perform web scraping on two URLs concurrently. The `executor.map()` function is a convenient way to execute the `fetch_data` function on each URL in the `urls` list. The results are returned in a list.</p>
-
-
-        <h4>Image Processing</h4>
-        <p>
-            Tasks like resizing, filtering, and transformation can be parallelized using ThreadPoolExecutor to improve the overall processing speed. This is particularly beneficial when you have to process a large number of images.
-        </p>
-        
-        <!-- Python Code Example for Image Processing -->
-        <h4>Python Code Example</h4>
-        <pre><code>
-        from PIL import Image
-        from concurrent.futures import ThreadPoolExecutor
-
-        def resize_image(image_path, output_path):
-            img = Image.open(image_path)
-            img = img.resize((300, 300))
-            img.save(output_path)
-
-        image_paths = ['image1.jpg', 'image2.jpg', 'image3.jpg']
-        output_paths = ['image1_resized.jpg', 'image2_resized.jpg', 'image3_resized.jpg']
-
-        with ThreadPoolExecutor() as executor:
-            executor.map(resize_image, image_paths, output_paths)
-        </code></pre>
-        <p>This Python snippet uses the Pillow library to resize images concurrently. ThreadPoolExecutor's `map()` function handles the parallel processing, significantly speeding up the resizing operation.</p>
-
-        <h4>API Calls</h4>
-        <p>
-            Making API calls sequentially can be a bottleneck in your application. By using ThreadPoolExecutor, you can make multiple API requests in parallel, thus saving a considerable amount of time.
-        </p>
-
-        <!-- Python Code Example for API Calls -->
-        <h4>Python Code Example</h4>
-        <pre><code>
-        import requests
-        from concurrent.futures import ThreadPoolExecutor
-
-        def fetch_data_from_api(api_url):
-            return requests.get(api_url).json()
-
-        api_urls = ['https://api.example.com/data1', 'https://api.example.com/data2']
-
-        with ThreadPoolExecutor() as executor:
-            results = list(executor.map(fetch_data_from_api, api_urls))
-        </code></pre>
-        <p>The above code demonstrates how to make API requests concurrently using ThreadPoolExecutor. The `executor.map()` function concurrently fetches data from the list of API URLs and stores the results in a list.</p>
-
-        <!-- Section: Tips and Caveats -->
-        <h3>Tips and Caveats</h3>
-        <ul>
-            <li>Always remember to close the executor using the `with` statement to ensure that all resources are freed up.</li>
-            <li>Be cautious of thread safety, especially when dealing with shared resources like global variables or file systems.</li>
-            <li>Beware of the Global Interpreter Lock (GIL) in CPython, which can hinder true parallelism when performing CPU-bound tasks.</li>
-            <li>Adjust the number of threads based on your system's capabilities and the nature of your tasks. Excessive threads might lead to context switching overhead.</li>
-        </ul>
-
-        <!-- Section: Conclusion -->
-        <h3>Conclusion</h3>
-        <p>
-            ThreadPoolExecutor and as_completed offer an efficient and convenient way to handle concurrent programming tasks in Python. By understanding their capabilities and limitations, you can significantly improve the performance and efficiency of various applications, be it data scraping, image processing, or API interactions.
-        </p>
-        <p>
-            I encourage you to experiment with these tools and find the right balance between concurrency and parallelism to meet your specific needs.
-        </p>
-
-        <!-- Section: Further Reading -->
-        <h3>Further Reading</h3>
-        <ul>
-            <li><a href="https://docs.python.org/3/library/concurrent.futures.html" target="_blank">Python concurrent.futures Documentation</a></li>
-            <li><a href="https://realpython.com/python-concurrency/" target="_blank">Real Python: An Intro to Threading in Python</a></li>
-            <li><a href="https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python" target="_blank">Toptal: Beginners Guide to Concurrency and Parallelism in Python</a></li>
-        </ul>
-
-    </div>
-</section>
-
-
-    
-<!-- Like Button Section -->
-<section class="mt-3 container text-center like-button-container">
-    <button id="likeButton">
-        <i class="fas fa-thumbs-up"></i> <!-- Thumbs up icon -->
-        Like
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">Vispi NK</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <span id="likeCount" style="margin-left: 10px;">0</span> Likes
-</section>
-
-
-<!-- Simple Comment Section -->
-<div class="container mt-5">
-    <h3>Leave a Comment</h3>
-
-    <!-- Comment Form -->
-    <div class="comment-form">
-        <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea><br>
-        <button id="submitComment">Submit</button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#opensource">Open Source</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#publications">Publications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+      </ul>
+      <a href="../assets/cv/cv.pdf" class="btn-cv" target="_blank"><i class="fas fa-download me-1"></i>Download CV</a>
+      <button class="dark-toggle ms-3" id="darkToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
     </div>
+  </div>
+</nav>
 
-    <!-- List of Comments -->
-    <div class="comments-list mt-4">
-        <ul id="commentList"></ul>
-    </div>
-</div><!-- CSS for the Comment Section -->
-<style>
-    .comment-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
-    .comment-form button {
-        background-color: #222;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    .comments-list ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-    .comments-list li {
-        border-bottom: 1px solid #ccc;
-        padding: 8px 0;
-        margin-bottom: 10px;
-    }
-</style>
+<article class="blog-article container">
+  <a href="../blog.html" class="btn-outline-custom" style="font-size:0.85rem;padding:0.4rem 1rem;margin-bottom:2rem;display:inline-block;"><i class="fas fa-arrow-left me-1"></i>All Posts</a>
+  <h1 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:0.5rem;">Efficient Concurrent Programming with Python's ThreadPoolExecutor and as_completed</h1>
+  <p class="lead">Vispi Karkaria &bull; August 28, 2023</p>
 
-<!-- JavaScript for the Comment Section -->
-<script>
-    document.getElementById('submitComment').addEventListener('click', function() {
-        const commentInput = document.getElementById('commentInput');
-        
-        if (commentInput.value.trim() !== "") {
-            fetch('send_email.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'comment=' + encodeURIComponent(commentInput.value.trim()),
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                const commentList = document.getElementById('commentList');
-                const newComment = document.createElement('li');
-                newComment.textContent = commentInput.value.trim();
-                commentList.appendChild(newComment);
-                
-                commentInput.value = "";  // Clear the input
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }
-    });
-</script>
+  <h2>How ThreadPoolExecutor and as_completed Can Help</h2>
+  <p>ThreadPoolExecutor and as_completed in Python's concurrent.futures library offer an efficient way to manage concurrent tasks. They enable:</p>
+  <ul>
+    <li>Better utilization of CPU cores, making your application faster and more efficient.</li>
+    <li>Improved execution time for I/O-bound tasks like file operations or network requests, as they don't have to wait for each other to complete.</li>
+    <li>A convenient API for handling asynchronous tasks, removing much of the complexity associated with concurrent programming.</li>
+  </ul>
 
+  <h3>Python Code Example</h3>
+  <p>To demonstrate, here is a simple Python code snippet using ThreadPoolExecutor and as_completed:</p>
+  <pre><code>from concurrent.futures import ThreadPoolExecutor, as_completed
 
+def worker_function(x):
+    return x * x
+
+# Create a ThreadPoolExecutor
+with ThreadPoolExecutor() as executor:
+    # Submit tasks to the executor
+    futures = {executor.submit(worker_function, i): i for i in range(5)}
+    # Process results as they complete
+    for future in as_completed(futures):
+        print(future.result())</code></pre>
+  <p>The code above creates a ThreadPoolExecutor and submits five tasks to it. The tasks are processed concurrently, and their results are printed as they become available.</p>
+
+  <h2>Use Cases</h2>
+  <h3>Data Scraping</h3>
+  <p>ThreadPoolExecutor can significantly expedite data scraping tasks by running multiple scrapers in parallel, thus reducing the time it takes to retrieve data from multiple sources.</p>
+
+  <pre><code>from concurrent.futures import ThreadPoolExecutor
+import requests
+
+def fetch_data(url):
+    return requests.get(url).text
+
+urls = ['https://example.com/page1', 'https://example.com/page2']
+
+# Create a ThreadPoolExecutor
+with ThreadPoolExecutor() as executor:
+    # Fetch data from multiple URLs in parallel
+    results = list(executor.map(fetch_data, urls))</code></pre>
+  <p>This example demonstrates how to perform web scraping on two URLs concurrently. The <code>executor.map()</code> function is a convenient way to execute the <code>fetch_data</code> function on each URL in the <code>urls</code> list. The results are returned in a list.</p>
+
+  <h3>Image Processing</h3>
+  <p>
+    Tasks like resizing, filtering, and transformation can be parallelized using ThreadPoolExecutor to improve the overall processing speed. This is particularly beneficial when you have to process a large number of images.
+  </p>
+
+  <pre><code>from PIL import Image
+from concurrent.futures import ThreadPoolExecutor
+
+def resize_image(image_path, output_path):
+    img = Image.open(image_path)
+    img = img.resize((300, 300))
+    img.save(output_path)
+
+image_paths = ['image1.jpg', 'image2.jpg', 'image3.jpg']
+output_paths = ['image1_resized.jpg', 'image2_resized.jpg', 'image3_resized.jpg']
+
+with ThreadPoolExecutor() as executor:
+    executor.map(resize_image, image_paths, output_paths)</code></pre>
+  <p>This Python snippet uses the Pillow library to resize images concurrently. ThreadPoolExecutor's <code>map()</code> function handles the parallel processing, significantly speeding up the resizing operation.</p>
+
+  <h3>API Calls</h3>
+  <p>
+    Making API calls sequentially can be a bottleneck in your application. By using ThreadPoolExecutor, you can make multiple API requests in parallel, thus saving a considerable amount of time.
+  </p>
+
+  <pre><code>import requests
+from concurrent.futures import ThreadPoolExecutor
+
+def fetch_data_from_api(api_url):
+    return requests.get(api_url).json()
+
+api_urls = ['https://api.example.com/data1', 'https://api.example.com/data2']
+
+with ThreadPoolExecutor() as executor:
+    results = list(executor.map(fetch_data_from_api, api_urls))</code></pre>
+  <p>The above code demonstrates how to make API requests concurrently using ThreadPoolExecutor. The <code>executor.map()</code> function concurrently fetches data from the list of API URLs and stores the results in a list.</p>
+
+  <h2>Tips and Caveats</h2>
+  <ul>
+    <li>Always remember to close the executor using the <code>with</code> statement to ensure that all resources are freed up.</li>
+    <li>Be cautious of thread safety, especially when dealing with shared resources like global variables or file systems.</li>
+    <li>Beware of the Global Interpreter Lock (GIL) in CPython, which can hinder true parallelism when performing CPU-bound tasks.</li>
+    <li>Adjust the number of threads based on your system's capabilities and the nature of your tasks. Excessive threads might lead to context switching overhead.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>
+    ThreadPoolExecutor and as_completed offer an efficient and convenient way to handle concurrent programming tasks in Python. By understanding their capabilities and limitations, you can significantly improve the performance and efficiency of various applications, be it data scraping, image processing, or API interactions.
+  </p>
+  <p>
+    I encourage you to experiment with these tools and find the right balance between concurrency and parallelism to meet your specific needs.
+  </p>
+
+  <h2>Further Reading</h2>
+  <ul>
+    <li><a href="https://docs.python.org/3/library/concurrent.futures.html" target="_blank">Python concurrent.futures Documentation</a></li>
+    <li><a href="https://realpython.com/python-concurrency/" target="_blank">Real Python: An Intro to Threading in Python</a></li>
+    <li><a href="https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python" target="_blank">Toptal: Beginners Guide to Concurrency and Parallelism in Python</a></li>
+  </ul>
+
+</article>
+
+<!-- Footer -->
 <footer class="footer">
-    <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-    <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:vispikarkaria127@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="container text-center">
+    <div class="social-links">
+      <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Vispikarkaria" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/VispiKarkaria3" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:vispikarkaria127@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">&copy; 2025 Vispi Karkaria</p>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Time Tracking Script
-    let startTime = new Date().getTime();
-    
-    window.addEventListener('beforeunload', function() {
-        let endTime = new Date().getTime();
-        let timeSpent = (endTime - startTime) / 1000;
-        console.log('User spent', timeSpent, 'seconds on the page.');
-        
-        // You can replace the console.log with an AJAX call to send data to your server.
-    });
-
-    // Like Button Script
-    let likeCount = 0;
-
-    document.getElementById('likeButton').addEventListener('click', function() {
-        likeCount++;
-        document.getElementById('likeCount').innerText = likeCount;
-        this.disabled = true; // Disables the button after one click
-    });
+(function(){
+  const toggle = document.getElementById('darkToggle');
+  const icon = toggle.querySelector('i');
+  if(localStorage.getItem('darkMode')==='true'){
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon','fa-sun');
+  }
+  toggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', dark);
+    icon.classList.replace(dark?'fa-moon':'fa-sun', dark?'fa-sun':'fa-moon');
+  });
+})();
 </script>
-
-<!-- External Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
