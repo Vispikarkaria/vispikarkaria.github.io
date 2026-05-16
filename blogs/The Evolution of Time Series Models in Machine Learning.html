@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Evolution of Time Series Models in Machine Learning | Vispi Karkaria</title>
+  <meta name="description" content="From statistical forecasting to foundation models — how time series AI is evolving from predicting signals to understanding system dynamics." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding-top: 120px; padding-bottom: 4rem; }
+    .blog-article h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; }
+    .blog-article h3 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.6rem; }
+    .blog-article p, .blog-article li { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
+    .blog-article ul, .blog-article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .blog-article img { border-radius: var(--radius); box-shadow: var(--shadow); margin: 1.5rem 0; }
+    .blog-article .lead { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+    body.dark-mode .blog-article p, body.dark-mode .blog-article li { color: #B0B0B0; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">Vispi NK</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#opensource">Open Source</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#publications">Publications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+      </ul>
+      <a href="../assets/cv/cv.pdf" class="btn-cv" target="_blank"><i class="fas fa-download me-1"></i>Download CV</a>
+      <button class="dark-toggle ms-3" id="darkToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+
+<article class="blog-article container">
+  <a href="../blog.html" class="btn-outline-custom" style="font-size:0.85rem;padding:0.4rem 1rem;margin-bottom:2rem;display:inline-block;"><i class="fas fa-arrow-left me-1"></i>All Posts</a>
+  <h1 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:0.5rem;">The Evolution of Time Series Models in Machine Learning</h1>
+  <p class="lead">Vispi Karkaria &bull; May 2026</p>
+
+  <figure style="text-align:center;margin-bottom:2rem;">
+    <img src="time_series_evolution.jpg" alt="The Evolution of Time Series Models" style="width:100%;">
+    <figcaption style="font-size:0.85rem;color:var(--text-body);margin-top:0.5rem;">From statistical forecasting to foundation models for temporal reasoning.</figcaption>
+  </figure>
+
+  <p>Time series modeling has undergone major transformation. The evolution reflects a broader shift in ML: from handcrafted assumptions about temporal behavior to data-driven systems capable of learning temporal representations directly from data.</p>
+
+  <p>Today, time series systems are central across finance, healthcare, manufacturing, digital twins, climate science, recommendation systems, and scientific ML. Temporal systems require models to reason about dynamics, memory, uncertainty, causality, and long-horizon interactions.</p>
+
+  <h2>Era 1: Classical Statistical Methods</h2>
+  <p>The earliest generation was dominated by statistical forecasting techniques including ARIMA, SARIMA, Kalman filters, exponential smoothing, and Gaussian processes [1]. These methods were mathematically grounded, interpretable, and computationally efficient but relied heavily on handcrafted assumptions and struggled with highly nonlinear dynamics or large-scale multivariate systems.</p>
+
+  <h2>Era 2: Deep Learning</h2>
+  <p>The rise of deep learning significantly changed the field. Key developments:</p>
+  <ol>
+    <li>RNNs, LSTMs, GRUs, Temporal Convolutional Networks (TCNs), and sequence-to-sequence forecasting models for learning temporal features directly from raw sequential data.</li>
+    <li>Attention-based architectures and Transformers (after Vaswani et al. [4]), replacing recurrence with attention mechanisms for modeling global temporal interactions more efficiently.</li>
+  </ol>
+
+  <p>Important milestones:</p>
+  <ul>
+    <li><strong>LSTM</strong> architectures by Hochreiter and Schmidhuber [2] modeled long-term temporal dependencies more effectively than classical recurrent systems.</li>
+    <li><strong>TCNs</strong> — Bai et al. [3] demonstrated that temporal convolutional networks often outperformed recurrent architectures on sequence modeling tasks while being easier to parallelize and train.</li>
+    <li><strong>Transformers</strong> enabled systems to capture long-range interactions, scale to larger datasets, and parallelize training efficiently.</li>
+  </ul>
+
+  <h2>Era 3: Foundation Models (2020s)</h2>
+  <p>The most recent shift is from task-specific forecasting models to generalizable time series foundation models.</p>
+
+  <p>Key architectures:</p>
+  <ul>
+    <li><strong>Informer</strong> [5] — efficient attention mechanisms for long-sequence forecasting</li>
+    <li><strong>Autoformer</strong> [6] — decomposition strategies for temporal modeling</li>
+    <li><strong>FEDformer</strong> [7] — frequency domain learning and multiscale temporal modeling</li>
+  </ul>
+
+  <p>Recent systems like <strong>TimesFM</strong> [8] and <strong>Chronos</strong> [9] reflect the trend toward universal forecasting models capable of transfer learning across domains.</p>
+
+  <p>Another major development: integration of time series learning into scientific ML and digital twin systems, combining temporal modeling, spatial reasoning, operator learning, uncertainty quantification, and physics-informed learning.</p>
+
+  <h2>Key Trends</h2>
+  <ol>
+    <li>Time series models are evolving from isolated forecasting systems toward foundation-style temporal reasoning architectures capable of transfer learning and generalization across domains.</li>
+    <li>Modern systems increasingly combine forecasting, reasoning, uncertainty quantification, and physics-informed learning into unified temporal intelligence frameworks.</li>
+  </ol>
+
+  <h2>The Road Ahead</h2>
+  <p>The most important question is shifting from <em>"Can a model forecast the next step?"</em> to <em>"Can AI systems learn the underlying dynamics governing how complex systems evolve through time?"</em></p>
+
+  <h2>References</h2>
+  <ol style="font-size:0.85rem;opacity:0.85;">
+    <li>Box, G.E.P., Jenkins, G.M., et al. "Time Series Analysis: Forecasting and Control." Wiley, 1970.</li>
+    <li>Hochreiter, S. and Schmidhuber, J. "Long short-term memory." <em>Neural Computation</em> 9.8 (1997): 1735-1780.</li>
+    <li>Bai, S., Kolter, J.Z., and Koltun, V. "An empirical evaluation of generic convolutional and recurrent networks for sequence modeling." <em>arXiv:1803.01271</em> (2018).</li>
+    <li>Vaswani, A., et al. "Attention is all you need." <em>NeurIPS</em> 30 (2017).</li>
+    <li>Zhou, H., et al. "Informer: Beyond efficient transformer for long sequence time-series forecasting." <em>AAAI</em> 35.12 (2021): 11106-11115.</li>
+    <li>Wu, H., et al. "Autoformer: Decomposition transformers with auto-correlation for long-term series forecasting." <em>NeurIPS</em> 34 (2021).</li>
+    <li>Zhou, T., et al. "FEDformer: Frequency enhanced decomposed transformer for long-term series forecasting." <em>ICML</em> (2022).</li>
+    <li>Das, A., et al. "A decoder-only foundation model for time-series forecasting." <em>ICML</em> (2024).</li>
+    <li>Ansari, A.F., et al. "Chronos: Learning the language of time series." <em>arXiv:2403.07815</em> (2024).</li>
+  </ol>
+
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container text-center">
+    <div class="social-links">
+      <a href="https://scholar.google.com/citations?user=6ZxujUkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.linkedin.com/in/vispi-karkaria" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Vispikarkaria" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/VispiKarkaria3" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:vispikarkaria127@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">&copy; 2025 Vispi Karkaria</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+  const toggle = document.getElementById('darkToggle');
+  const icon = toggle.querySelector('i');
+  if(localStorage.getItem('darkMode')==='true'){
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon','fa-sun');
+  }
+  toggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', dark);
+    icon.classList.replace(dark?'fa-moon':'fa-sun', dark?'fa-sun':'fa-moon');
+  });
+})();
+</script>
+</body>
+</html>
